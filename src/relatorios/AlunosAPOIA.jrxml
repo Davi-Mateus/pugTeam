@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AlunosAPOIA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="07d17775-07f7-49f9-a0c9-4cdeb70c23d5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ano" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="mes" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select
+	id_turma,
+	nome_turma,
+	id_aluno,
+	nome_aluno,
+	numero_matricula,
+	dia,
+	(case when exists(select * from faltas_seguidas where id_aluno = aluno.id_aluno and qtde >= 5 and month(aluno.dia) = $P{mes} and year(aluno.dia) = $P{ano}) or exists(select * from numero_faltas_mes n where faltas >= 7) then 'S' ELSE 'N' END) as critico
+from
+	faltas_seguidas AS aluno
+group by
+	nome_aluno
+having
+	critico = "S"
+order by
+	id_aluno,
+	dia;]]>
+	</queryString>
+	<field name="id_turma" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_turma" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_aluno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_aluno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero_matricula" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dia" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="critico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="turma">
+		<groupExpression><![CDATA[$F{nome_turma}]]></groupExpression>
+		<groupHeader>
+			<band height="29">
+				<staticText>
+					<reportElement x="23" y="0" width="59" height="20" uuid="559c6e73-b4dd-4e98-a9cc-1a302111caef"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Turma:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="82" y="0" width="100" height="20" uuid="072b7b68-854d-4b53-b9e8-9bc15e3a9532"/>
+					<textFieldExpression><![CDATA[$F{nome_turma}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="27" uuid="c62659b2-25b4-42a6-8bea-2853be960073"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Escola Jacó Anderle (EEM)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="27" uuid="178ab03b-68d5-451e-afde-bfbf95a840ff"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Relatório de alunos programa APOIA]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="214" y="0" width="100" height="20" uuid="8081ea5f-c262-475e-be70-f5a1660fadb2"/>
+				<textElement>
+					<font size="12" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Aluno]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="214" y="0" width="100" height="20" uuid="5cda3038-743d-431a-9453-75fe289696d2"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_aluno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

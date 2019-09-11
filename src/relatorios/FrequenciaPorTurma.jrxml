@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FrequenciaPorTurma" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="873e2995-9d7c-4a12-a8fe-84c61c3a641a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="dt_inicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dt_final" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id_turma" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from frequencia where id_turma = $P{id_turma} and dia between $P{dt_inicio} and $P{dt_final}  order by dia]]>
+	</queryString>
+	<field name="id_turma" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_curso" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_turma" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ano" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dt_inicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dt_final" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_aluno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero_matricula" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_aluno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_dia_aula" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dia" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_matricula" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dt_matricula" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dt_cancelamento_matricula" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_registro" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dt_hr_entrada" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dt_hr_saida" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Dia">
+		<groupExpression><![CDATA[$F{dia}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="11" y="20" width="100" height="20" uuid="7f583ebf-e8f5-41a8-8bbd-d83604f13db7"/>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dia}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="11" y="0" width="100" height="20" uuid="d550ef1a-25e1-4da5-b723-292e033b5519"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Dia]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="27" uuid="a2088f82-ebea-4e83-bd5f-fa40e4a0bbc9"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Escola Jacó Anderle (EEM)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="83" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="27" uuid="46b13d68-90ff-4914-8e5e-04863abd9ed0"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Relatório de frequência por turma
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="47" width="53" height="20" uuid="10cb4aa4-95ea-4175-a07e-f1f236cf46cf"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Turma:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="67" y="47" width="477" height="20" uuid="39a7e31d-a039-437b-9329-6b3c011d7b1a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_turma}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="444" y="0" width="100" height="20" uuid="27ca64ef-228f-4e71-bc92-7f0044aabea3"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora saída]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="0" width="100" height="20" uuid="d269af0a-81d1-44e2-99c5-2903d2ee9d83"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora entrada]]></text>
+			</staticText>
+			<elementGroup>
+				<elementGroup/>
+			</elementGroup>
+			<elementGroup/>
+			<staticText>
+				<reportElement x="126" y="0" width="100" height="20" uuid="e27f670a-cad0-408d-b7ce-054001d513b7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aluno:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField pattern="HH:mm" isBlankWhenNull="true">
+				<reportElement x="444" y="0" width="100" height="20" uuid="06bdc71b-22b1-4cb9-98c3-2d4ece064447"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dt_hr_saida}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm" isBlankWhenNull="true">
+				<reportElement x="344" y="0" width="100" height="20" uuid="b720bc20-f1ea-4092-9b6f-33bc4d04820d"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dt_hr_entrada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="0" width="218" height="20" uuid="808bf4bd-4caf-4d41-8a9a-512a68a13bc4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome_aluno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="510" y="6" width="45" height="20" uuid="acdd6b0d-62df-48a2-97b0-d1175695679f"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
