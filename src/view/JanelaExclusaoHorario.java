@@ -150,7 +150,7 @@ public class JanelaExclusaoHorario {
 		btnCancelar.setBounds(451, 333, 117, 25);
 		panel.add(btnCancelar);
 		
-		lblAviso = new JLabel("* Somente ser√° poss√≠vel excluir hor·rios que n„o estejam sendo usados por nenhuma turma.");
+		lblAviso = new JLabel("* Somente ser· possÌvel excluir hor·rios que n„o estejam sendo usados por nenhuma turma.");
 		lblAviso.setForeground(Color.RED);
 		lblAviso.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblAviso.setBounds(58, 88, 660, 20);

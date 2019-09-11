@@ -739,7 +739,7 @@ public class JanelaPrincipal {
 			}
 			for (Permissao permissao : permissoesAluno) {
 				//verifica se possui permissao de saida
-				if (permissao.getTipoPermissao().equals("saÃ­da") || permissao.getTipoPermissao().equals("entrada e saÃ­da")) {
+				if (permissao.getTipoPermissao().equals("saída") || permissao.getTipoPermissao().equals("entrada e saída")) {
 					registraSaida(registroDao, registroAlunoPresente);
 					return;
 				}
@@ -749,13 +749,13 @@ public class JanelaPrincipal {
 				List<Permissao> permissoesTurma = permissaoDao.pesquisarPermissoesTurmaDia(turma);
 				for (Permissao permissao : permissoesTurma) {
 					//verifica se possui permissao de saida
-					if (permissao.getTipoPermissao().equals("saÃ­da") || permissao.getTipoPermissao().equals("entrada e saÃ­da")) {
+					if (permissao.getTipoPermissao().equals("saída") || permissao.getTipoPermissao().equals("entrada e saída")) {
 						registraSaida(registroDao, registroAlunoPresente);
 						return;
 					}
 				}
 			}
-			mostraMensagem("SaÃ­da não autorizada", new Color(204, 51, 0));
+			mostraMensagem("Saída não autorizada", new Color(204, 51, 0));
 			return;
 		}
 		
@@ -770,7 +770,7 @@ public class JanelaPrincipal {
 		
 		for (Permissao permissao : permissoesAluno) {
 			//verifica se possui permissao de entrada
-			if (permissao.getTipoPermissao().equals("entrada") || permissao.getTipoPermissao().equals("entrada e saÃ­da")) {
+			if (permissao.getTipoPermissao().equals("entrada") || permissao.getTipoPermissao().equals("entrada e saída")) {
 				for (Horario horario : horariosAluno) {
 					if (horaAtual.isAfter(horario.getHorarioInicioAulaLocaTime()) &&  horaAtual.isBefore(horario.getHorarioFinalAulaLocaTime())) {
 						registraEntrada(registroDao, horaAtual, horario);
@@ -785,7 +785,7 @@ public class JanelaPrincipal {
 			List<Permissao> permissoesTurma = permissaoDao.pesquisarPermissoesTurmaDia(turma);
 			for (Permissao permissao : permissoesTurma) {
 				//verifica se possui permissao de entrada
-				if (permissao.getTipoPermissao().equals("entrada") || permissao.getTipoPermissao().equals("entrada e saÃ­da")) {
+				if (permissao.getTipoPermissao().equals("entrada") || permissao.getTipoPermissao().equals("entrada e saída")) {
 					for (Horario horario : horariosAluno) {
 						if (horaAtual.isAfter(horario.getHorarioInicioAulaLocaTime()) && horaAtual.isBefore(horario.getHorarioFinalAulaLocaTime())) {
 							registraEntrada(registroDao, horaAtual, horario);
@@ -814,7 +814,7 @@ public class JanelaPrincipal {
 	private void registraSaida(RegistroDao registroDao, Registro registroAlunoPresente) {
 		registroAlunoPresente.setHoraSaida(new Date());
 		registroDao.sair(registroAlunoPresente);
-		mostraMensagem("SaÃ­da autorizada", new Color(0, 153, 0));
+		mostraMensagem("Saída autorizada", new Color(0, 153, 0));
 		return;
 	}
 	

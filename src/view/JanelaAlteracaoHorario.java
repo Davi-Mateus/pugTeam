@@ -170,11 +170,11 @@ public class JanelaAlteracaoHorario {
 				try {
 					horario = (Horario) comboBoxHorario.getSelectedItem();
 				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(null, "ERRO, o hor·rio n√£o foi selecionado");
+					JOptionPane.showMessageDialog(null, "ERRO, o hor·rio n„o foi selecionado");
 					return;
 				}
 				if (diaSemana == "Selecione o dia da semana") {
-					JOptionPane.showMessageDialog(null, "ERRO, o dia da semana n√£o foi selecionado");
+					JOptionPane.showMessageDialog(null, "ERRO, o dia da semana n„o foi selecionado");
 					return;
 				}
 				try {
@@ -207,7 +207,7 @@ public class JanelaAlteracaoHorario {
 				case "Segunda-feira":
 					horarioNovo.setDiaSemanaInt(1);
 					break;
-				case "Ter√ßa-feira":
+				case "TerÁa-feira":
 					horarioNovo.setDiaSemanaInt(2);
 					break;
 				case "Quarta-feira":
@@ -219,7 +219,7 @@ public class JanelaAlteracaoHorario {
 				case "Sexta-feira":
 					horarioNovo.setDiaSemanaInt(5);
 					break;
-				case "S√°bado":
+				case "S·bado":
 					horarioNovo.setDiaSemanaInt(6);
 					break;
 					
