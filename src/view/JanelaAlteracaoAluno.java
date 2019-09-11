@@ -84,7 +84,7 @@ public class JanelaAlteracaoAluno {
 		panel.add(inputNomeAlunoNovo);
 		inputNomeAlunoNovo.setColumns(10);
 		
-		lblNumeroMatricula = new JLabel("Novo nÂº da matricula:");
+		lblNumeroMatricula = new JLabel("Novo número da matrícula:");
 		lblNumeroMatricula.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblNumeroMatricula.setBounds(58, 144, 203, 15);
 		panel.add(lblNumeroMatricula);
@@ -103,21 +103,21 @@ public class JanelaAlteracaoAluno {
 				Long numeroMatricula;
 				
 				if (alunoSelecionado.getIdAluno() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o aluno nÃ£o foi selecionado corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, o aluno não foi selecionado corretamente");
 					return;
 				}
 				if (nome.trim().length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nome do aluno nÃ£o foi preenchido");
+					JOptionPane.showMessageDialog(null, "ERRO, o nome do aluno não foi preenchido");
 					return;
 				}
 				if (txtNmeroMatricula.trim().length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nÃºmero da matrÃ­cula nÃ£o foi preenchido");
+					JOptionPane.showMessageDialog(null, "ERRO, o número da matrícula não foi preenchido");
 					return;
 				}
 				try {
 					numeroMatricula = Long.parseLong(inputNumeroMatriculaNova.getText(), 10);
 				} catch (NumberFormatException e) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nÃºmero da matrÃ­cula nÃ£o foi preenchido corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, o número da matrícula não foi preenchido corretamente");
 					return;
 				}
 				

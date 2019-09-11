@@ -61,7 +61,7 @@ public class JanelaRelatorioAusentes {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("Relat√≥rio de alunos ausentes");
+		frame.setTitle("RelatÛrio de alunos ausentes");
 		frame.setBounds(0, 0, 761, 180);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -70,7 +70,7 @@ public class JanelaRelatorioAusentes {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		lblTurma = new JLabel("Selecione o per√≠odo:");
+		lblTurma = new JLabel("Selecione o perÌodo:");
 		lblTurma.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblTurma.setBounds(30, 20, 190, 20);
 		panel.add(lblTurma);
@@ -83,7 +83,7 @@ public class JanelaRelatorioAusentes {
 				try {
 					dtInicio = sdfData.format(dataInicio.getDate());
 				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(null, "ERRO, a data de in√≠cio n√£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a data de inÌcio n„o foi selecionada");
 					return;
 				}
 				
@@ -91,7 +91,7 @@ public class JanelaRelatorioAusentes {
 				try {
 					dtFinal = sdfData.format(dataFinal.getDate());
 				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(null, "ERRO, a data de final n√£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a data de final n„o foi selecionada");
 					return;
 				}
 				
@@ -100,7 +100,7 @@ public class JanelaRelatorioAusentes {
 				parametros.put("dt_final", dtFinal);
 								
 				try {
-					new Relatorio().gerar( "/home/rafael/GitHub/pugTeam/src/relatorios/AlunosAusentes.jasper", parametros, "Relat√≥rio de alunos ausentes" );
+					new Relatorio().gerar( "/home/rafael/GitHub/pugTeam/src/relatorios/AlunosAusentes.jasper", parametros, "RelatÛrio de alunos ausentes" );
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -130,7 +130,7 @@ public class JanelaRelatorioAusentes {
 		dataFinal.setBounds(370, 20, 100, 25);
 		panel.add(dataFinal);
 		
-		lblAte = new JLabel("at√©");
+		lblAte = new JLabel("atÈ");
 		lblAte.setBounds(333, 20, 70, 20);
 		panel.add(lblAte);
 		

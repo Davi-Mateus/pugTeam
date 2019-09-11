@@ -67,7 +67,7 @@ public class JanelaCadastroHorario {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("Cadastro de hor√°rios de aula");
+		frame.setTitle("Cadastro de hor·rios de aula");
 		frame.setBounds(0, 0, 761, 430);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -81,7 +81,7 @@ public class JanelaCadastroHorario {
 		lblDiaSemana.setBounds(58, 32, 130, 20);
 		panel.add(lblDiaSemana);
 		
-		lblHoraInicio = new JLabel("Hora in√≠cio aula:");
+		lblHoraInicio = new JLabel("Hora inÌcio aula:");
 		lblHoraInicio.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblHoraInicio.setBounds(58, 88, 130, 20);
 		panel.add(lblHoraInicio);
@@ -118,11 +118,11 @@ public class JanelaCadastroHorario {
 		comboBoxDiaSemana.setBounds(244, 32, 362, 25);
 		comboBoxDiaSemana.addItem("Selecione o dia da semana");
 		comboBoxDiaSemana.addItem("Segunda-feira");
-		comboBoxDiaSemana.addItem("Ter√ßa-feira");
+		comboBoxDiaSemana.addItem("TerÁa-feira");
 		comboBoxDiaSemana.addItem("Quarta-feira");
 		comboBoxDiaSemana.addItem("Quinta-feira");
 		comboBoxDiaSemana.addItem("Sexta-feira");
-		comboBoxDiaSemana.addItem("S√°bado");
+		comboBoxDiaSemana.addItem("S·bado");
 		comboBoxDiaSemana.addItem("Domingo");
 		panel.add(comboBoxDiaSemana);
 
@@ -135,35 +135,35 @@ public class JanelaCadastroHorario {
 				Date horaFinal = null;
 				
 				if (diaSemana == "Selecione o dia da semana") {
-					JOptionPane.showMessageDialog(null, "ERRO, o dia da semana n√£o foi selecionado");
+					JOptionPane.showMessageDialog(null, "ERRO, o dia da semana n„o foi selecionado");
 					return;
 				}
 				try {
 					horaInicio = sdf.parse(inputHoraInicio.getText());
 				} catch (ParseException e) {
-					JOptionPane.showMessageDialog(null, "ERRO, a hora de in√≠cio das aulas n√£o foi preenchida corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, a hora de inÌcio das aulas n„o foi preenchida corretamente");
 					return;
 				}
 				try {
 					horaFinal = sdf.parse(inputHoraFinal.getText());
 				} catch (ParseException e) {
-					JOptionPane.showMessageDialog(null, "ERRO, a hora final das aulas n√£o foi preenchida corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, a hora final das aulas n„o foi preenchida corretamente");
 					return;
 				}
 				if (inputHoraInicio.getText().length() < 5) {
-					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio n√£o foi preenchida corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio n„o foi preenchida corretamente");
 					return;
 				}
 				if (inputHoraFinal.getText().length() < 5) {
-					JOptionPane.showMessageDialog(null, "ERRO, a hora final n√£o foi preenchida corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, a hora final n„o foi preenchida corretamente");
 					return;
 				}
 				if (horaInicio.equals(horaFinal)) {
-					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio √© igual √† hora final das aulas");
+					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio È igual ‡ hora final das aulas");
 					return;
 				}
 				if (horaInicio.after(horaFinal)) {
-					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio √© posterior √† hora final das aulas");
+					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio È posterior ‡ hora final das aulas");
 					return;
 				}
 				
@@ -175,7 +175,7 @@ public class JanelaCadastroHorario {
 				case "Segunda-feira":
 					horario.setDiaSemanaInt(1);
 					break;
-				case "Ter√ßa-feira":
+				case "TerÁa-feira":
 					horario.setDiaSemanaInt(2);
 					break;
 				case "Quarta-feira":
@@ -187,7 +187,7 @@ public class JanelaCadastroHorario {
 				case "Sexta-feira":
 					horario.setDiaSemanaInt(5);
 					break;
-				case "S√°bado":
+				case "S·bado":
 					horario.setDiaSemanaInt(6);
 					break;
 				default:
@@ -199,14 +199,14 @@ public class JanelaCadastroHorario {
 				boolean insercao = horarioDao.inserir(horario);
 				
 				if (!insercao) {
-					JOptionPane.showMessageDialog(null, "ERRO ao inserir o hor√°rio de aula no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao inserir o hor·rio de aula no banco de dados");
 					limpaCampos();
 					return;
 				}
 				
 				limpaCampos();
 				instanciaJanelaPrincipal.criaSchedulerPorAula();				
-				JOptionPane.showMessageDialog(null, "Hor√°rio de aula inserido com sucesso");
+				JOptionPane.showMessageDialog(null, "Hor·rio de aula inserido com sucesso");
 			}
 		});
 		btnSalvar.setBounds(257, 333, 117, 25);

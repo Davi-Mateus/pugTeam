@@ -79,7 +79,7 @@ public class JanelaCadastroCurso {
 				
 				String nome = inputNomeCurso.getText();
 				if (nome.length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nome do curso n√£o foi preenchido");
+					JOptionPane.showMessageDialog(null, "ERRO, o nome do curso n„o foi preenchido");
 					return;
 				}
 

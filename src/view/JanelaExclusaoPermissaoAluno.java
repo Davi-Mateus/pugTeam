@@ -66,7 +66,7 @@ public class JanelaExclusaoPermissaoAluno {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("Excluir permiss√£o de aluno");
+		frame.setTitle("Excluir permiss„o de aluno");
 		frame.setBounds(0, 0, 761, 430);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -114,14 +114,14 @@ public class JanelaExclusaoPermissaoAluno {
 				PermissaoDao permissaoDao = new PermissaoDao();
 				
 				if (permissaoSelecionada.getIdPermissao() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, a permiss√£o n√£o foi selecionada corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, a permiss„o n„o foi selecionada corretamente");
 					return;
 				}
 				
 				boolean exclusaoPermiteAluno = permiteAlunoDao.excluir(permissaoSelecionada.getAluno().getIdAluno(), permissaoSelecionada.getIdPermissao());
 				
 				if (!exclusaoPermiteAluno) {
-					JOptionPane.showMessageDialog(null, "ERRO ao excluir a permiss√£o do banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao excluir a permiss„o do banco de dados");
 					limpaCampos();
 					return;
 				}
@@ -129,14 +129,14 @@ public class JanelaExclusaoPermissaoAluno {
 				boolean exclusaoPermissao = permissaoDao.excluir(permissaoSelecionada);
 				
 				if (!exclusaoPermissao) {
-					JOptionPane.showMessageDialog(null, "ERRO ao excluir a permiss√£o do banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao excluir a permiss„o do banco de dados");
 					limpaCampos();
 					return;
 				}
 				
 				limpaCampos();
 				instanciaJanelaPrincipal.preencheAlunosComPermissao();	
-				JOptionPane.showMessageDialog(null, "Permiss√£o exclu√≠da com sucesso");
+				JOptionPane.showMessageDialog(null, "Permiss„o excluÌda com sucesso");
 			}
 		});
 		btnExcluir.setBounds(257, 333, 117, 25);

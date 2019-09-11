@@ -137,7 +137,7 @@ public class JanelaAlteracaoTurma {
 			comboBoxAno.addItem(i);
 		}
 		
-		lblDataIncioAulas = new JLabel("Nova data In√≠cio aulas:");
+		lblDataIncioAulas = new JLabel("Nova data inÌcio aulas:");
 		lblDataIncioAulas.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblDataIncioAulas.setBounds(58, 256, 181, 20);
 		panel.add(lblDataIncioAulas);
@@ -157,7 +157,7 @@ public class JanelaAlteracaoTurma {
 		inputDataFinal.setBounds(244, 312, 362, 25);
 		panel.add(inputDataFinal);
 		
-		lblHorario = new JLabel("Novos hor√°rios de aula:");
+		lblHorario = new JLabel("Novos hor·rioss de aula:");
 		lblHorario.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblHorario.setBounds(58, 368, 195, 20);
 		panel.add(lblHorario);
@@ -201,31 +201,31 @@ public class JanelaAlteracaoTurma {
 				Date dataFinal = inputDataFinal.getDate();
 				
 				if (nomeTurma.length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nome da turma n√£o foi preenchido");
+					JOptionPane.showMessageDialog(null, "ERRO, o nome da turma n„o foi preenchido");
 					return;
 				}
 				if (curso == "Selecione o curso") {
-					JOptionPane.showMessageDialog(null, "ERRO, o nome do curso n√£o foi selecionado");
+					JOptionPane.showMessageDialog(null, "ERRO, o nome do curso n„o foi selecionado");
 					return;
 				}
 				if (ano == "Selecione o ano") {
-					JOptionPane.showMessageDialog(null, "ERRO, o ano n√£o foi selecionado");
+					JOptionPane.showMessageDialog(null, "ERRO, o ano n„o foi selecionado");
 					return;
 				}
 				if (dataFinal == null) {
-					JOptionPane.showMessageDialog(null, "ERRO, a data final das aulas n√£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a data final das aulas n„o foi selecionada");
 					return;
 				}
 				if (dataInicial == null) {
-					JOptionPane.showMessageDialog(null, "ERRO, a data de in√≠cio das aulas n√£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a data de inÌcio das aulas n„o foi selecionada");
 					return;
 				}
 				if (dataInicial.after(dataFinal)) {
-					JOptionPane.showMessageDialog(null, "ERRO, a data de inicio √© posterior √† data final das aulas");
+					JOptionPane.showMessageDialog(null, "ERRO, a data de inicio È posterior ‡ data final das aulas");
 					return;
 				}
 				if (!sdfAno.format(dataInicial).equals(ano)) {
-					JOptionPane.showMessageDialog(null, "ERRO, o ano selecionado √© diferente do ano de in√≠cio das aulas");
+					JOptionPane.showMessageDialog(null, "ERRO, o ano selecionado È diferente do ano de inÌcio das aulas");
 					return;
 				}
 				
@@ -253,7 +253,7 @@ public class JanelaAlteracaoTurma {
 				for (Horario quadroHorarios : horariosSelecionados) {
 					boolean insercaoPossui = possuiDao.inserir(turmaSelecionada.getIdTurma(), quadroHorarios.getIdHorario());
 					if (!insercaoPossui) {
-						JOptionPane.showMessageDialog(null, "ERRO ao alterar hor√°rios da turma no banco de dados");
+						JOptionPane.showMessageDialog(null, "ERRO ao alterar hor·rioss da turma no banco de dados");
 						limpaCampos();
 						return;
 					}

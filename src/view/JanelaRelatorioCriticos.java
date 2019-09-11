@@ -56,7 +56,7 @@ public class JanelaRelatorioCriticos {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("RelatÃ³rio de alunos crÃ­ticos");
+		frame.setTitle("Relatório de alunos críticos");
 		frame.setBounds(0, 0, 761, 180);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -65,7 +65,7 @@ public class JanelaRelatorioCriticos {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		lblTurma = new JLabel("Selecione o perÃ­odo:");
+		lblTurma = new JLabel("Selecione o período:");
 		lblTurma.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblTurma.setBounds(30, 20, 190, 20);
 		panel.add(lblTurma);
@@ -82,7 +82,7 @@ public class JanelaRelatorioCriticos {
 				parametros.put("ano", ano);
 								
 				try {
-					new Relatorio().gerar("/home/rafael/GitHub/pugTeam/src/relatorios/AlunosCriticos.jasper", parametros, "RelatÃ³rio de alunos crÃ­ticos");
+					new Relatorio().gerar("/home/rafael/GitHub/pugTeam/src/relatorios/AlunosCriticos.jasper", parametros, "Relatório de alunos críticos");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

@@ -61,7 +61,7 @@ public class JanelaExclusaoHorario {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("Excluir horários de aula");
+		frame.setTitle("Excluir hor�rios de aula");
 		frame.setBounds(0, 0, 761, 430);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -70,7 +70,7 @@ public class JanelaExclusaoHorario {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		labelHorario = new JLabel("Horário:");
+		labelHorario = new JLabel("hor�rios:");
 		labelHorario.setFont(new Font("Dialog", Font.BOLD, 14));
 		labelHorario.setBounds(58, 32, 130, 20);
 		panel.add(labelHorario);
@@ -89,10 +89,10 @@ public class JanelaExclusaoHorario {
 				try {
 					horario = (Horario) comboBoxHorario.getSelectedItem();
 				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(null, "ERRO, o horário não foi selecionado");
+					JOptionPane.showMessageDialog(null, "ERRO, o hor�rios n�o foi selecionado");
 					return;
 				}	
-				int confirmarExlcusao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir o horário?");
+				int confirmarExlcusao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir o hor�rios?");
 				
 				if (confirmarExlcusao == 1) {
 					return;
@@ -107,7 +107,7 @@ public class JanelaExclusaoHorario {
 				boolean exclusaoPossui = possuiDao.excluirPorHorario(horario.getIdHorario());
 				
 				if (!exclusaoPossui) {
-					JOptionPane.showMessageDialog(null, "ERRO ao excluir o horários da turma no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao excluir o hor�rios da turma no banco de dados");
 					limpaCampos();
 					return;
 					
@@ -127,14 +127,14 @@ public class JanelaExclusaoHorario {
 				boolean exclusao = horarioDaoNovo.excluir(horario);
 				
 				if (!exclusao) {
-					JOptionPane.showMessageDialog(null, "ERRO ao excluir o horário de aula do banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao excluir o hor�rios de aula do banco de dados");
 					limpaCampos();
 					return;
 				}
 				
 				limpaCampos();
 				preencheComboBoxHorarios();	
-				JOptionPane.showMessageDialog(null, "Horário de aula excluído com sucesso");
+				JOptionPane.showMessageDialog(null, "hor�rios de aula exclu�do com sucesso");
 			}
 		});
 		btnExcluir.setBounds(257, 333, 117, 25);
@@ -150,7 +150,7 @@ public class JanelaExclusaoHorario {
 		btnCancelar.setBounds(451, 333, 117, 25);
 		panel.add(btnCancelar);
 		
-		lblAviso = new JLabel("* Somente será possível excluir horários que não estejam sendo usados por nenhuma turma.");
+		lblAviso = new JLabel("* Somente será possível excluir hor�rios que n�o estejam sendo usados por nenhuma turma.");
 		lblAviso.setForeground(Color.RED);
 		lblAviso.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblAviso.setBounds(58, 88, 660, 20);
@@ -162,7 +162,7 @@ public class JanelaExclusaoHorario {
 		List<Horario> horarios = new ArrayList<>();
 		HorarioDao quadroHorariosDao = new HorarioDao();
 		horarios = quadroHorariosDao.pesquisarPorHorarioDeletavel("");
-		comboBoxHorario.addItem("Selecione o horário");
+		comboBoxHorario.addItem("Selecione o hor�rios");
 		for (Horario horario: horarios) {
 			comboBoxHorario.addItem(horario);
 		}

@@ -56,7 +56,7 @@ public class JanelaRelatorioAPOIA {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("RelatÃ³rio de alunos programa APOIA");
+		frame.setTitle("Relatório de alunos programa APOIA");
 		frame.setBounds(0, 0, 761, 180);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -65,7 +65,7 @@ public class JanelaRelatorioAPOIA {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		lblTurma = new JLabel("Selecione o perÃ­odo:");
+		lblTurma = new JLabel("Selecione o período:");
 		lblTurma.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblTurma.setBounds(30, 20, 190, 20);
 		panel.add(lblTurma);
@@ -82,7 +82,7 @@ public class JanelaRelatorioAPOIA {
 				parametros.put("ano", ano);
 								
 				try {
-					new Relatorio().gerar("/home/rafael/GitHub/pugTeam/src/relatorios/AlunosAPOIA.jasper", parametros, "RelatÃ³rio de alunos programa APOIA");
+					new Relatorio().gerar("/home/rafael/GitHub/pugTeam/src/relatorios/AlunosAPOIA.jasper", parametros, "Relatório de alunos programa APOIA");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

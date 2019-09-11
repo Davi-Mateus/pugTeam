@@ -90,7 +90,7 @@ public class JanelaExclusaoTurma {
 				try {
 					turma = (Turma) comboBoxTurma.getSelectedItem();
 				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(null, "ERRO, a turma n√£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a turma n„o foi selecionada");
 					return;
 				}
 				
@@ -118,7 +118,7 @@ public class JanelaExclusaoTurma {
 				boolean exclusaoPermiteTurma = permiteTurmaDao.excluir(turma.getIdTurma());
 				
 				if (!exclusaoPermiteTurma) {
-					JOptionPane.showMessageDialog(null, "ERRO ao excluir permiss√µes da turma do banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao excluir permissıes da turma do banco de dados");
 					limpaCampos();
 					return;
 				}
@@ -127,7 +127,7 @@ public class JanelaExclusaoTurma {
 				boolean exclusaoPossui = possuiDao.excluir(turma.getIdTurma());
 				
 				if (!exclusaoPossui) {
-					JOptionPane.showMessageDialog(null, "ERRO ao excluir hor√°rios da turma do banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao excluir hor·rios da turma do banco de dados");
 					limpaCampos();
 					return;
 				}
@@ -143,7 +143,7 @@ public class JanelaExclusaoTurma {
 				
 				limpaCampos();
 				preencheComboBoxTurma();		
-				JOptionPane.showMessageDialog(null, "Turma exclu√≠da com sucesso");
+				JOptionPane.showMessageDialog(null, "Turma excluÌda com sucesso");
 			}
 		});
 		btnExcluir.setBounds(257, 333, 117, 25);
@@ -159,7 +159,7 @@ public class JanelaExclusaoTurma {
 		btnCancelar.setBounds(451, 333, 117, 25);
 		panel.add(btnCancelar);
 		
-		lblSomenteSer = new JLabel("* N√£o ser√° poss√≠vel excluir turmas com alunos matriculados e/ou hist√≥rico de registros.");
+		lblSomenteSer = new JLabel("* N„o ser· possÌvel excluir turmas com alunos matriculados e/ou histÛrico de registros.");
 		lblSomenteSer.setForeground(Color.RED);
 		lblSomenteSer.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblSomenteSer.setBounds(58, 88, 602, 20);

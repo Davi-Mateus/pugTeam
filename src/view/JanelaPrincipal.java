@@ -222,7 +222,7 @@ public class JanelaPrincipal {
 		lblVisitantes.setBounds(1500, 290, 201, 25);
 		panel.add(lblVisitantes);
 		
-		lblAlunosFaltasExcessivas = new JLabel("Alunos criticos do mês:");
+		lblAlunosFaltasExcessivas = new JLabel("Alunos criticos do m�s:");
 		lblAlunosFaltasExcessivas.setFont(new Font("Dialog", Font.BOLD, 19));
 		lblAlunosFaltasExcessivas.setBounds(40, 290, 341, 25);
 		panel.add(lblAlunosFaltasExcessivas);
@@ -232,12 +232,12 @@ public class JanelaPrincipal {
 		lblAlunosAtrasados.setBounds(405, 290, 295, 25);
 		panel.add(lblAlunosAtrasados);
 		
-		lblAlunosPermissao = new JLabel("Alunos com permissão hoje:");
+		lblAlunosPermissao = new JLabel("Alunos com permiss�o hoje:");
 		lblAlunosPermissao.setFont(new Font("Dialog", Font.BOLD, 19));
 		lblAlunosPermissao.setBounds(770, 290, 348, 25);
 		panel.add(lblAlunosPermissao);
 		
-		lblTurmasComPermissao = new JLabel("Turmas com permissão hoje:");
+		lblTurmasComPermissao = new JLabel("Turmas com permiss�o hoje:");
 		lblTurmasComPermissao.setFont(new Font("Dialog", Font.BOLD, 19));
 		lblTurmasComPermissao.setBounds(1135, 290, 348, 25);
 		panel.add(lblTurmasComPermissao);
@@ -313,7 +313,7 @@ public class JanelaPrincipal {
 		mntmCadastrarCurso.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnCadastrar.add(mntmCadastrarCurso);
 		
-		mntmCadastrarHorriosDeAula = new JMenuItem("Cadastrar horários de aula");
+		mntmCadastrarHorriosDeAula = new JMenuItem("Cadastrar hor�rios de aula");
 		mntmCadastrarHorriosDeAula.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaCadastroHorario == null) {
@@ -369,7 +369,7 @@ public class JanelaPrincipal {
 		mntmAlterarCurso.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnAlterar.add(mntmAlterarCurso);
 		
-		mntmAlterarHorriosDeAula = new JMenuItem("Alterar horários de aula");
+		mntmAlterarHorriosDeAula = new JMenuItem("Alterar hor�rios de aula");
 		mntmAlterarHorriosDeAula.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaAlteracaoHorario == null) {
@@ -425,7 +425,7 @@ public class JanelaPrincipal {
 		mntmExcluirCurso.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnExcluir.add(mntmExcluirCurso);
 		
-		mntmExcluirHorriosDeAula = new JMenuItem("Excluir horários de aula");
+		mntmExcluirHorriosDeAula = new JMenuItem("Excluir hor�rios de aula");
 		mntmExcluirHorriosDeAula.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaExclusaoHorario == null) {
@@ -464,7 +464,7 @@ public class JanelaPrincipal {
 		mntmExcluirDiaDeAula.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnExcluir.add(mntmExcluirDiaDeAula);
 		
-		mnMatricula = new JMenu("Matrícula");
+		mnMatricula = new JMenu("Matr�cula");
 		mnMatricula.setFont(new Font("Dialog", Font.BOLD, 22));
 		menuBar.add(mnMatricula);
 		
@@ -481,7 +481,7 @@ public class JanelaPrincipal {
 		mntmMatricularAluno.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnMatricula.add(mntmMatricularAluno);
 		
-		mntmCancelarMatriculaDe = new JMenuItem("Cancelar matrícula de aluno");
+		mntmCancelarMatriculaDe = new JMenuItem("Cancelar matr�cula de aluno");
 		mntmCancelarMatriculaDe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaCancelamentoMatriculaAluno == null) {
@@ -494,11 +494,11 @@ public class JanelaPrincipal {
 		mntmCancelarMatriculaDe.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnMatricula.add(mntmCancelarMatriculaDe);
 		
-		mnPermitir = new JMenu("Permissão");
+		mnPermitir = new JMenu("Permiss�o");
 		mnPermitir.setFont(new Font("Dialog", Font.BOLD, 22));
 		menuBar.add(mnPermitir);
 		
-		mntmCadastrarPermissaoAluno = new JMenuItem("Cadastrar permissão aluno");
+		mntmCadastrarPermissaoAluno = new JMenuItem("Cadastrar permiss�o aluno");
 		mntmCadastrarPermissaoAluno.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaCadastroPermissaoAluno == null) {
@@ -511,7 +511,7 @@ public class JanelaPrincipal {
 		mntmCadastrarPermissaoAluno.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnPermitir.add(mntmCadastrarPermissaoAluno);
 		
-		mntmCadastrarPermissaoTurma = new JMenuItem("Cadastrar permissão turma");
+		mntmCadastrarPermissaoTurma = new JMenuItem("Cadastrar permiss�o turma");
 		mntmCadastrarPermissaoTurma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaCadastroPermissaoTurma == null) {
@@ -524,7 +524,7 @@ public class JanelaPrincipal {
 		mntmCadastrarPermissaoTurma.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnPermitir.add(mntmCadastrarPermissaoTurma);
 		
-		mntmCadastrarPermissaoVisitante = new JMenuItem("Cadastrar permissão visitante");
+		mntmCadastrarPermissaoVisitante = new JMenuItem("Cadastrar permiss�o visitante");
 		mntmCadastrarPermissaoVisitante.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaCadastroPermissaoVisitante == null) {
@@ -537,7 +537,7 @@ public class JanelaPrincipal {
 		mntmCadastrarPermissaoVisitante.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnPermitir.add(mntmCadastrarPermissaoVisitante);
 		
-		mntmExcluirPermissaoAluno = new JMenuItem("Excluir permissão aluno");
+		mntmExcluirPermissaoAluno = new JMenuItem("Excluir permiss�o aluno");
 		mntmExcluirPermissaoAluno.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaExclusaoPermissaoAluno == null) {
@@ -550,7 +550,7 @@ public class JanelaPrincipal {
 		mntmExcluirPermissaoAluno.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnPermitir.add(mntmExcluirPermissaoAluno);
 		
-		mntmExcluirPermissaoTurma = new JMenuItem("Excluir permissão turma");
+		mntmExcluirPermissaoTurma = new JMenuItem("Excluir permiss�o turma");
 		mntmExcluirPermissaoTurma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaExclusaoPermissaoTurma == null) {
@@ -563,7 +563,7 @@ public class JanelaPrincipal {
 		mntmExcluirPermissaoTurma.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnPermitir.add(mntmExcluirPermissaoTurma);
 		
-		mntmExcluirPermissaoVisitante = new JMenuItem("Excluir permissão visitante");
+		mntmExcluirPermissaoVisitante = new JMenuItem("Excluir permiss�o visitante");
 		mntmExcluirPermissaoVisitante.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaExclusaoPermissaoVisitante == null) {
@@ -576,7 +576,7 @@ public class JanelaPrincipal {
 		mntmExcluirPermissaoVisitante.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnPermitir.add(mntmExcluirPermissaoVisitante);
 		
-		mnRelatorios = new JMenu("Relatórios");
+		mnRelatorios = new JMenu("Relat�rios");
 		mnRelatorios.setFont(new Font("Dialog", Font.BOLD, 22));
 		menuBar.add(mnRelatorios);
 		
@@ -619,7 +619,7 @@ public class JanelaPrincipal {
 		mntmAlunosAusentes.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnRelatorios.add(mntmAlunosAusentes);
 		
-		mntmAlunosCriticos = new JMenuItem("Alunos críticos");
+		mntmAlunosCriticos = new JMenuItem("Alunos cr�ticos");
 		mntmAlunosCriticos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (frameJanelaRelatorioCriticos == null) {
@@ -645,11 +645,11 @@ public class JanelaPrincipal {
 		mntmAlunosProgramaApoia.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnRelatorios.add(mntmAlunosProgramaApoia);
 		
-		mnNewMenu = new JMenu("Importação");
+		mnNewMenu = new JMenu("Importa��o");
 		mnNewMenu.setFont(new Font("Dialog", Font.BOLD, 22));
 		menuBar.add(mnNewMenu);
 		
-		mnImportacaoCSV = new JMenuItem("Importação CSV");
+		mnImportacaoCSV = new JMenuItem("Importa��o CSV");
 		mnImportacaoCSV.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnNewMenu.add(mnImportacaoCSV);
 		mnImportacaoCSV.addActionListener(new ActionListener() {
@@ -716,7 +716,7 @@ public class JanelaPrincipal {
 	
 	private void registra() {
 		if (alunoSelecionado == null || alunoSelecionado.getIdAluno() == 0) {
-			mostraMensagem("Aluno inválido ou não selecionado", new Color(204, 51, 0));
+			mostraMensagem("Aluno inval�do ou n�o selecionado", new Color(204, 51, 0));
 			return;
 		}
 		//verifica horarios de aula do aluno
@@ -755,7 +755,7 @@ public class JanelaPrincipal {
 					}
 				}
 			}
-			mostraMensagem("Saída não autorizada", new Color(204, 51, 0));
+			mostraMensagem("Saída n�o autorizada", new Color(204, 51, 0));
 			return;
 		}
 		
@@ -796,7 +796,7 @@ public class JanelaPrincipal {
 				}
 			}
 		}
-		mostraMensagem("Entrada não autorizada", new Color(204, 51, 0));
+		mostraMensagem("Entrada n�o autorizada", new Color(204, 51, 0));
 		return;
 	}
 	

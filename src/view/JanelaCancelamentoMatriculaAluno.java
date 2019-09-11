@@ -68,7 +68,7 @@ public class JanelaCancelamentoMatriculaAluno {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("Cancelamento de matr√≠cula de aluno");
+		frame.setTitle("Cancelamento de matrÌcula de aluno");
 		frame.setBounds(0, 0, 761, 430);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -101,11 +101,11 @@ public class JanelaCancelamentoMatriculaAluno {
 				String aluno = inputAluno.getText();
 			
 				if (aluno.length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nome do aluno n√£o foi selecionado");
+					JOptionPane.showMessageDialog(null, "ERRO, o nome do aluno n„o foi selecionado");
 					return;
 				}
 				if (turma == "Selecione a turma") {
-					JOptionPane.showMessageDialog(null, "ERRO, a turma n√£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a turma n„o foi selecionada");
 					return;
 				}
 							
@@ -117,14 +117,14 @@ public class JanelaCancelamentoMatriculaAluno {
 				boolean cancelamento = matriculaDao.cancelar(matricula);
 				
 				if (!cancelamento) {
-					JOptionPane.showMessageDialog(null, "ERRO ao cancelar matr√≠cula no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao cancelar matrÌcula no banco de dados");
 					limpaCampos();
 					return;
 				}
 				
 				limpaCampos();
 				
-				JOptionPane.showMessageDialog(null, "Cancelamento de matr√≠cula realizada com sucesso");
+				JOptionPane.showMessageDialog(null, "Cancelamento de matrÌcula realizada com sucesso");
 			}
 		});
 		btnSalvar.setBounds(257, 333, 117, 25);

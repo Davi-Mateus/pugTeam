@@ -75,7 +75,7 @@ public class JanelaCadastroAluno {
 		panel.add(inputNomeAluno);
 		inputNomeAluno.setColumns(10);
 		
-		lblNumeroMatricula = new JLabel("NÃºmero da matricula:");
+		lblNumeroMatricula = new JLabel("Número da matrícula:");
 		lblNumeroMatricula.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblNumeroMatricula.setBounds(58, 88, 181, 15);
 		panel.add(lblNumeroMatricula);
@@ -94,18 +94,18 @@ public class JanelaCadastroAluno {
 				Long numeroMatricula;
 				
 				if (nome.trim().length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nome do aluno nÃ£o foi preenchido");
+					JOptionPane.showMessageDialog(null, "ERRO, o nome do aluno não foi preenchido");
 					return;
 				}
 				if (txtNmeroMatricula.trim().length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nÃºmero da matrÃ­cula nÃ£o foi preenchido");
+					JOptionPane.showMessageDialog(null, "ERRO, o número da matrícula não foi preenchido");
 					return;
 				}
 				
 				try {
 					numeroMatricula = Long.parseLong(inputNumeroMatricula.getText(), 10);
 				} catch (NumberFormatException e) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nÃºmero da matricula nÃ£o foi preenchido corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, o número da matricula não foi preenchido corretamente");
 					return;
 				}
 				Aluno aluno = new Aluno();

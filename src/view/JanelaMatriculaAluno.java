@@ -68,7 +68,7 @@ public class JanelaMatriculaAluno {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("Matr√≠cula de aluno");
+		frame.setTitle("MatrÌcula de aluno");
 		frame.setBounds(0, 0, 761, 430);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -126,11 +126,11 @@ public class JanelaMatriculaAluno {
 				MatriculaDao matriculaDao = new MatriculaDao();
 			
 				if (alunoSelecionado.getIdAluno() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nome do aluno n√£o foi selecionado corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, o nome do aluno n„o foi selecionado corretamente");
 					return;
 				}
 				if (turma == "Selecione a turma") {
-					JOptionPane.showMessageDialog(null, "ERRO, a turma n√£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a turma n„o foi selecionada");
 					return;
 				}
 
@@ -141,21 +141,21 @@ public class JanelaMatriculaAluno {
 				boolean MatriculaExistente = matriculaDao.verificarMatriculaExistente(matricula);
 				
 				if (MatriculaExistente) {
-					JOptionPane.showMessageDialog(null, "ERRO, o aluno j√° est√° matriculado nessa turma");
+					JOptionPane.showMessageDialog(null, "ERRO, o aluno j· est· matriculado nessa turma");
 					return;
 				}
 				
 				boolean insercao = matriculaDao.inserir(matricula);
 				
 				if (!insercao) {
-					JOptionPane.showMessageDialog(null, "ERRO ao realizar matr√≠cula no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao realizar matrÌcula no banco de dados");
 					limpaCampos();
 					return;
 				}
 				
 				limpaCampos();
 				preencheComboBoxTurma();
-				JOptionPane.showMessageDialog(null, "Matr√≠cula realizada com sucesso");
+				JOptionPane.showMessageDialog(null, "MatrÌcula realizada com sucesso");
 				
 			}
 		});

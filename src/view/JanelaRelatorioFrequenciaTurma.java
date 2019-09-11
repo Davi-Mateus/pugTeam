@@ -68,7 +68,7 @@ public class JanelaRelatorioFrequenciaTurma {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("RelatÃ³rio de frequÃªncia por turma");
+		frame.setTitle("Relatório de frequência por turma");
 		frame.setBounds(0, 0, 761, 180);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -90,7 +90,7 @@ public class JanelaRelatorioFrequenciaTurma {
 				try {
 					dtInicio = sdfData.format(dataInicio.getDate());
 				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(null, "ERRO, a data de inÃ­cio nÃ£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a data de início não foi selecionada");
 					return;
 				}
 				
@@ -98,7 +98,7 @@ public class JanelaRelatorioFrequenciaTurma {
 				try {
 					dtFinal = sdfData.format(dataFinal.getDate());
 				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(null, "ERRO, a data de final nÃ£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a data de final não foi selecionada");
 					return;
 				}
 				
@@ -106,7 +106,7 @@ public class JanelaRelatorioFrequenciaTurma {
 				try {
 					turma = (Turma) comboBoxTurma.getSelectedItem();
 				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(null, "ERRO, a turma nÃ£o foi selecionado");
+					JOptionPane.showMessageDialog(null, "ERRO, a turma não foi selecionado");
 					return;
 				}
 				
@@ -116,7 +116,7 @@ public class JanelaRelatorioFrequenciaTurma {
 				parametros.put("id_turma", turma.getIdTurma());
 								
 				try {
-					new Relatorio().gerar( "/home/rafael/GitHub/pugTeam/src/relatorios/FrequenciaPorTurma.jasper", parametros, "RelatÃ³rio de frequÃªncia por turma" );
+					new Relatorio().gerar( "/home/rafael/GitHub/pugTeam/src/relatorios/FrequenciaPorTurma.jasper", parametros, "Relatório de frequência por turma" );
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -146,7 +146,7 @@ public class JanelaRelatorioFrequenciaTurma {
 		dataFinal.setBounds(520, 20, 100, 25);
 		panel.add(dataFinal);
 		
-		lblAte = new JLabel("atÃ©");
+		lblAte = new JLabel("até");
 		lblAte.setBounds(490, 20, 70, 20);
 		panel.add(lblAte);
 		

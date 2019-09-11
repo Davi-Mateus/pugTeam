@@ -74,7 +74,7 @@ public class JanelaCadastroPermissaoAluno {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("Cadastro de permiss√£o para aluno");
+		frame.setTitle("Cadastro de permiss„o para aluno");
 		frame.setBounds(0, 0, 761, 430);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -114,7 +114,7 @@ public class JanelaCadastroPermissaoAluno {
 		panel.add(inputAluno);
 		inputAluno.setColumns(10);
 		
-		lblResponsvel = new JLabel("Respons√°vel:");
+		lblResponsvel = new JLabel("Respons·vel:");
 		lblResponsvel.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblResponsvel.setBounds(58, 144, 181, 15);
 		panel.add(lblResponsvel);
@@ -124,12 +124,12 @@ public class JanelaCadastroPermissaoAluno {
 		inputResponsavel.setBounds(244, 144, 362, 25);
 		panel.add(inputResponsavel);
 		
-		lblDataDaPermissao = new JLabel("Data da permissao:");
+		lblDataDaPermissao = new JLabel("Data da permiss„o:");
 		lblDataDaPermissao.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblDataDaPermissao.setBounds(58, 200, 181, 15);
 		panel.add(lblDataDaPermissao);
 		
-		lblTipoDePermisso = new JLabel("Tipo da permiss√£o:");
+		lblTipoDePermisso = new JLabel("Tipo da permiss„o:");
 		lblTipoDePermisso.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblTipoDePermisso.setBounds(58, 88, 181, 15);
 		panel.add(lblTipoDePermisso);
@@ -137,10 +137,10 @@ public class JanelaCadastroPermissaoAluno {
 		comboBoxTipo = new JComboBox<String>();
 		comboBoxTipo.setBounds(244, 88, 362, 25);
 		panel.add(comboBoxTipo);
-		comboBoxTipo.addItem("Selecione o tipo da permiss√£o");
+		comboBoxTipo.addItem("Selecione o tipo da permiss„o");
 		comboBoxTipo.addItem("entrada");
-		comboBoxTipo.addItem("sa√≠da");
-		comboBoxTipo.addItem("entrada e sa√≠da");
+		comboBoxTipo.addItem("saÌda");
+		comboBoxTipo.addItem("entrada e saÌda");
 		
 		btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
@@ -151,19 +151,19 @@ public class JanelaCadastroPermissaoAluno {
 				Date dataPermissao = inputDataPermissao.getDate();
 												
 				if (alunoSelecionado.getIdAluno() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o aluno n√£o foi selecionado corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, o aluno n„o foi selecionado corretamente");
 					return;
 				}
-				if (tipoPermissao == "Selecione o tipo da permiss√£o") {
-					JOptionPane.showMessageDialog(null, "ERRO, tipo de permiss√£o n√£o foi selecionada");
+				if (tipoPermissao == "Selecione o tipo da permiss„o") {
+					JOptionPane.showMessageDialog(null, "ERRO, tipo de permiss„o n„o foi selecionada");
 					return;
 				}
 				if (responsavel.length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o respons√°vel pela permiss√£o n√£o foi preenchido");
+					JOptionPane.showMessageDialog(null, "ERRO, o respons·vel pela permiss„o n„o foi preenchido");
 					return;
 				}
 				if (dataPermissao == null) {
-					JOptionPane.showMessageDialog(null, "ERRO, a data da permiss√£o n√£o foi preenchida");
+					JOptionPane.showMessageDialog(null, "ERRO, a data da permiss„o n„o foi preenchida");
 					return;
 				}
 				
@@ -177,7 +177,7 @@ public class JanelaCadastroPermissaoAluno {
 				boolean insercaoPermissao = permissaoDao.inserirPermissao(permissao);
 				
 				if (!insercaoPermissao) {
-					JOptionPane.showMessageDialog(null, "ERRO ao inserir permiss√£o ao aluno no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao inserir permiss„o ao aluno no banco de dados");
 					limpaCampos();
 					return;
 				}
@@ -189,14 +189,14 @@ public class JanelaCadastroPermissaoAluno {
 				boolean insercaoPermiteAluno = permiteAlunoDao.inserir(alunoSelecionado.getIdAluno(), permissao.getIdPermissao());
 
 				if (!insercaoPermiteAluno) {
-					JOptionPane.showMessageDialog(null, "ERRO ao inserir permiss√£o ao aluno no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao inserir permiss„o ao aluno no banco de dados");
 					limpaCampos();
 					return;
 				}
 				
 				limpaCampos();
 				instanciaJanelaPrincipal.preencheAlunosComPermissao();
-				JOptionPane.showMessageDialog(null, " Permiss√£o ao aluno inserida com sucesso");
+				JOptionPane.showMessageDialog(null, " Permiss„o ao aluno inserida com sucesso");
 			}
 		});
 		btnSalvar.setBounds(257, 333, 117, 25);

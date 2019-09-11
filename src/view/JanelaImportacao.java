@@ -56,7 +56,7 @@ public class JanelaImportacao {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("ImportaÃ§Ã£o");
+		frame.setTitle("Importação");
 		frame.setBounds(0, 0, 761, 180);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -76,7 +76,7 @@ public class JanelaImportacao {
 				ImportacaoDao importacaoDao = new ImportacaoDao();
 				boolean importacao = importacaoDao.importar(caminhoArquivo.getText());
 				if (importacao) {
-					JOptionPane.showMessageDialog(null, "ImportaÃ§Ã£o efetuada com sucesso");
+					JOptionPane.showMessageDialog(null, "Importação efetuada com sucesso");
 				}
 				instanciaJanelaPrincipal.preencheAlunosAtrasados();
 				instanciaJanelaPrincipal.preencheAlunosCriticos();

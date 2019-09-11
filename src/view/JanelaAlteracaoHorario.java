@@ -74,7 +74,7 @@ public class JanelaAlteracaoHorario {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("Alterar hor√°rios de aula");
+		frame.setTitle("Alterar hor·rios de aula");
 		frame.setBounds(0, 0, 761, 430);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -88,7 +88,7 @@ public class JanelaAlteracaoHorario {
 		lblDiaSemana.setBounds(58, 88, 186, 20);
 		panel.add(lblDiaSemana);
 		
-		lblHoraInicio = new JLabel("Nova hora in√≠cio aula:");
+		lblHoraInicio = new JLabel("Nova hora inÌcio aula:");
 		lblHoraInicio.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblHoraInicio.setBounds(58, 144, 186, 20);
 		panel.add(lblHoraInicio);
@@ -125,11 +125,11 @@ public class JanelaAlteracaoHorario {
 		comboBoxDiaSemana.setBounds(244, 88, 362, 25);
 		comboBoxDiaSemana.addItem("Selecione o dia da semana");
 		comboBoxDiaSemana.addItem("Segunda-feira");
-		comboBoxDiaSemana.addItem("Ter√ßa-feira");
+		comboBoxDiaSemana.addItem("TerÁa-feira");
 		comboBoxDiaSemana.addItem("Quarta-feira");
 		comboBoxDiaSemana.addItem("Quinta-feira");
 		comboBoxDiaSemana.addItem("Sexta-feira");
-		comboBoxDiaSemana.addItem("S√°bado");
+		comboBoxDiaSemana.addItem("S·bado");
 		comboBoxDiaSemana.addItem("Domingo");
 		panel.add(comboBoxDiaSemana);
 		
@@ -153,7 +153,7 @@ public class JanelaAlteracaoHorario {
 	    });
 		panel.add(comboBoxHorario);
 		
-		labelHorario = new JLabel("Hor√°rio:");
+		labelHorario = new JLabel("hor·rio:");
 		labelHorario.setFont(new Font("Dialog", Font.BOLD, 14));
 		labelHorario.setBounds(58, 32, 130, 20);
 		panel.add(labelHorario);
@@ -170,7 +170,7 @@ public class JanelaAlteracaoHorario {
 				try {
 					horario = (Horario) comboBoxHorario.getSelectedItem();
 				} catch (Exception e1) {
-					JOptionPane.showMessageDialog(null, "ERRO, o hor√°rio n√£o foi selecionado");
+					JOptionPane.showMessageDialog(null, "ERRO, o hor·rio n√£o foi selecionado");
 					return;
 				}
 				if (diaSemana == "Selecione o dia da semana") {
@@ -180,21 +180,21 @@ public class JanelaAlteracaoHorario {
 				try {
 					horaInicio = sdf.parse(inputHoraInicio.getText());
 				} catch (ParseException e) {
-					JOptionPane.showMessageDialog(null, "ERRO, a hora de in√≠cio das aulas n√£o foi preenchida corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio n„o foi preenchida corretamente");
 					return;
 				}
 				try {
 					horaFinal = sdf.parse(inputHoraFinal.getText());
 				} catch (ParseException e) {
-					JOptionPane.showMessageDialog(null, "ERRO, a hora final das aulas n√£o foi preenchida corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, a hora final das aulas n„o foi preenchida corretamente");
 					return;
 				}
 				if (horaInicio.equals(horaFinal)) {
-					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio √© igual √† hora final das aulas");
+					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio È igual ‡ hora final das aulas");
 					return;
 				}
 				if (horaInicio.after(horaFinal)) {
-					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio √© posterior √† hora final das aulas");
+					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio È posterior ‡ hora final das aulas");
 					return;
 				}
 				
@@ -231,7 +231,7 @@ public class JanelaAlteracaoHorario {
 				boolean alteracao = quadroHorariosDaoNovo.alterar(horarioNovo);
 				
 				if (!alteracao) {
-					JOptionPane.showMessageDialog(null, "ERRO ao alterar o hor√°rio de aula no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao alterar o hor·rio de aula no banco de dados");
 					limpaCampos();
 					return;
 				}
@@ -239,7 +239,7 @@ public class JanelaAlteracaoHorario {
 				limpaCampos();
 				preencherComboBoxHorario();	
 				instanciaJanelaPrincipal.criaSchedulerPorAula();
-				JOptionPane.showMessageDialog(null, "Hor√°rio de aula alterado com sucesso");
+				JOptionPane.showMessageDialog(null, "Hor·rio de aula alterado com sucesso");
 			}
 		});
 		btnSalvar.setBounds(257, 333, 117, 25);
@@ -261,7 +261,7 @@ public class JanelaAlteracaoHorario {
 		List<Horario> quadrosHorarios = new ArrayList<>();
 		HorarioDao quadroHorariosDao = new HorarioDao();
 		quadrosHorarios = quadroHorariosDao.pesquisarPorNome("");
-		comboBoxHorario.addItem("Selecione o hor√°rio");
+		comboBoxHorario.addItem("Selecione o hor·rio");
 		for (Horario quadroHorarios: quadrosHorarios) {
 			comboBoxHorario.addItem(quadroHorarios);
 		}

@@ -64,7 +64,7 @@ public class JanelaCadastroPermissaoVisitante {
 		
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setTitle("Cadastro de permiss√£o para visitante");
+		frame.setTitle("Cadastro de permiss„o para visitante");
 		frame.setBounds(0, 0, 761, 430);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -103,19 +103,19 @@ public class JanelaCadastroPermissaoVisitante {
 				Date dataPermissao = inputDataPermissao.getDate();
 				
 				if (nome.length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nome do visitante n√£o foi preenchido");
+					JOptionPane.showMessageDialog(null, "ERRO, o nome do visitante n„o foi preenchido");
 					return;
 				}
 				if (motivo.length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o motivo da visita n√£o foi preenchido");
+					JOptionPane.showMessageDialog(null, "ERRO, o motivo da visita n„o foi preenchido");
 					return;
 				}
 				if (responsavel.length() == 0) {
-					JOptionPane.showMessageDialog(null, "ERRO, o respons√°vel pela visita n√£o foi preenchido");
+					JOptionPane.showMessageDialog(null, "ERRO, o respons·vel pela visita n„o foi preenchido");
 					return;
 				}
 				if (dataPermissao == null) {
-					JOptionPane.showMessageDialog(null, "ERRO, a data da visita n√£o foi preenchida");
+					JOptionPane.showMessageDialog(null, "ERRO, a data da visita n„o foi preenchida");
 					return;
 				}
 				
@@ -130,7 +130,7 @@ public class JanelaCadastroPermissaoVisitante {
 				boolean insercaoPermissao =permissaoDao.inserirPermissao(permissao);
 				
 				if (!insercaoPermissao) {
-					JOptionPane.showMessageDialog(null, "ERRO ao inserir permiss√£o ao visitante no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao inserir permiss„o ao visitante no banco de dados");
 					limpaCampos();
 					return;
 				}
@@ -146,14 +146,14 @@ public class JanelaCadastroPermissaoVisitante {
 				boolean insercaoVisitante = visitanteDao.inserir(visitante);
 				
 				if (!insercaoVisitante) {
-					JOptionPane.showMessageDialog(null, "ERRO ao inserir permiss√£o ao visitante no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao inserir permiss„o ao visitante no banco de dados");
 					limpaCampos();
 					return;
 				}
 				
 				limpaCampos();
 				instanciaJanelaPrincipal.preencheVisitantesDia();
-				JOptionPane.showMessageDialog(null, "Permiss√£o ao visitante inserido com sucesso");
+				JOptionPane.showMessageDialog(null, "Permiss„o ao visitante inserido com sucesso");
 			}
 		});
 		btnSalvar.setBounds(257, 333, 117, 25);
@@ -169,7 +169,7 @@ public class JanelaCadastroPermissaoVisitante {
 		btnCancelar.setBounds(451, 333, 117, 25);
 		panel.add(btnCancelar);
 		
-		lblResponsvel = new JLabel("Respons√°vel:");
+		lblResponsvel = new JLabel("Respons·vel:");
 		lblResponsvel.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblResponsvel.setBounds(58, 144, 181, 15);
 		panel.add(lblResponsvel);
@@ -179,7 +179,7 @@ public class JanelaCadastroPermissaoVisitante {
 		inputResponsavel.setBounds(244, 144, 362, 25);
 		panel.add(inputResponsavel);
 		
-		lblDataDaPermissao = new JLabel("Data da permissao:");
+		lblDataDaPermissao = new JLabel("Data da permiss„o:");
 		lblDataDaPermissao.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblDataDaPermissao.setBounds(58, 200, 181, 15);
 		panel.add(lblDataDaPermissao);

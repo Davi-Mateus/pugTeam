@@ -83,7 +83,7 @@ public class JanelaExclusaoCurso {
 				try {
 					cursoSelecionado = (Curso) comboBoxCurso.getSelectedItem();
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "ERRO, o curso n√£o foi selecionado");
+					JOptionPane.showMessageDialog(null, "ERRO, o curso n„o foi selecionado");
 					return;
 				}
 				
@@ -109,7 +109,7 @@ public class JanelaExclusaoCurso {
 				
 				limpaCampos();
 				preencheComboBoxCurso();
-				JOptionPane.showMessageDialog(null, "Curso exclu√≠do com sucesso");
+				JOptionPane.showMessageDialog(null, "Curso excluÌdo com sucesso");
 			}
 		});
 		btnSalvar.setBounds(257, 333, 117, 25);
@@ -125,7 +125,7 @@ public class JanelaExclusaoCurso {
 		btnCancelar.setBounds(451, 333, 117, 25);
 		panel.add(btnCancelar);
 		
-		JLabel labelAviso = new JLabel("* Somente ser√° poss√≠vel excluir cursos que n√£o possuam nenhuma turma.");
+		JLabel labelAviso = new JLabel("* Somente ser· possÌvel excluir cursos que n„o possuam nenhuma turma.");
 		labelAviso.setForeground(Color.RED);
 		labelAviso.setFont(new Font("Dialog", Font.BOLD, 11));
 		labelAviso.setBounds(58, 88, 548, 20);
