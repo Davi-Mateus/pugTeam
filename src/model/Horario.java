@@ -69,6 +69,6 @@ public class Horario {
 	
 	// Methods
 	public String toString() {
-		return diaSemana + " - " + sdf.format(horarioInicioAula) + " atÃ© Ã s " + sdf.format(horarioFinalAula);
+		return diaSemana + " - " + sdf.format(horarioInicioAula) + " até às " + sdf.format(horarioFinalAula);
 	}
 }
