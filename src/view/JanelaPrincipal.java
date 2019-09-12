@@ -179,7 +179,7 @@ public class JanelaPrincipal {
 		jListAlunosCriticos = new java.awt.List();
 		jListAlunosCriticos.setBackground(Color.WHITE);
 		jListAlunosCriticos.setFont(new Font("Dialog", Font.BOLD, 16));
-		jListAlunosCriticos.setBounds(40, 320, 320, 600);
+		jListAlunosCriticos.setBounds(20, 200, 250, 450);
 		jListAlunosCriticos.setFocusable(false);
 		panel.add(jListAlunosCriticos);
 		preencheAlunosCriticos();
@@ -187,7 +187,7 @@ public class JanelaPrincipal {
 		jListAlunosAtrasados = new java.awt.List();
 		jListAlunosAtrasados.setBackground(Color.WHITE);
 		jListAlunosAtrasados.setFont(new Font("Dialog", Font.BOLD, 16));
-		jListAlunosAtrasados.setBounds(405, 320, 320, 600);
+		jListAlunosAtrasados.setBounds(290, 200, 250, 450);
 		jListAlunosAtrasados.setFocusable(false);
 		panel.add(jListAlunosAtrasados);
 		criaSchedulerPorAula();
@@ -196,7 +196,7 @@ public class JanelaPrincipal {
 		jListAlunosComPermissao = new java.awt.List();
 		jListAlunosComPermissao.setBackground(Color.WHITE);
 		jListAlunosComPermissao.setFont(new Font("Dialog", Font.BOLD, 16));
-		jListAlunosComPermissao.setBounds(770, 320, 320, 600);
+		jListAlunosComPermissao.setBounds(560, 200, 250, 450);
 		jListAlunosComPermissao.setFocusable(false);
 		panel.add(jListAlunosComPermissao);
 		preencheAlunosComPermissao();
@@ -204,7 +204,7 @@ public class JanelaPrincipal {
 		jListTurmasComPermissao = new java.awt.List();
 		jListTurmasComPermissao.setBackground(Color.WHITE);
 		jListTurmasComPermissao.setFont(new Font("Dialog", Font.BOLD, 16));
-		jListTurmasComPermissao.setBounds(1135, 320, 320, 600);
+		jListTurmasComPermissao.setBounds(830, 200, 250, 450);
 		jListTurmasComPermissao.setFocusable(false);
 		panel.add(jListTurmasComPermissao);
 		preencheTurmasComPermissao();
@@ -212,34 +212,34 @@ public class JanelaPrincipal {
 		jListVisitantes = new java.awt.List();
 		jListVisitantes.setBackground(Color.WHITE);
 		jListVisitantes.setFont(new Font("Dialog", Font.BOLD, 16));
-		jListVisitantes.setBounds(1500, 320, 320, 600);
+		jListVisitantes.setBounds(1100, 200, 250, 450);
 		jListVisitantes.setFocusable(false);
 		panel.add(jListVisitantes);
 		preencheVisitantesDia();
 		
-		lblVisitantes = new JLabel("Visitantes hoje:");
+		lblVisitantes = new JLabel("Visitantes");
 		lblVisitantes.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblVisitantes.setBounds(1500, 290, 201, 25);
+		lblVisitantes.setBounds(1100, 170, 201, 25);
 		panel.add(lblVisitantes);
 		
-		lblAlunosFaltasExcessivas = new JLabel("Alunos criticos do mês:");
+		lblAlunosFaltasExcessivas = new JLabel("Alunos criticos");
 		lblAlunosFaltasExcessivas.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblAlunosFaltasExcessivas.setBounds(40, 290, 341, 25);
+		lblAlunosFaltasExcessivas.setBounds(20, 170, 341, 25);
 		panel.add(lblAlunosFaltasExcessivas);
 		
-		lblAlunosAtrasados = new JLabel("Alunos atrasados agora:");
+		lblAlunosAtrasados = new JLabel("Alunos atrasados");
 		lblAlunosAtrasados.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblAlunosAtrasados.setBounds(405, 290, 295, 25);
+		lblAlunosAtrasados.setBounds(290, 170, 295, 25);
 		panel.add(lblAlunosAtrasados);
 		
-		lblAlunosPermissao = new JLabel("Alunos com permissão hoje:");
+		lblAlunosPermissao = new JLabel("Alunos com permissão");
 		lblAlunosPermissao.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblAlunosPermissao.setBounds(770, 290, 348, 25);
+		lblAlunosPermissao.setBounds(560, 170, 348, 25);
 		panel.add(lblAlunosPermissao);
 		
-		lblTurmasComPermissao = new JLabel("Turmas com permissão hoje:");
+		lblTurmasComPermissao = new JLabel("Turmas com permissão");
 		lblTurmasComPermissao.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblTurmasComPermissao.setBounds(1135, 290, 348, 25);
+		lblTurmasComPermissao.setBounds(830, 170, 348, 25);
 		panel.add(lblTurmasComPermissao);
 		
 		inputAluno = new JTextField();
@@ -275,7 +275,7 @@ public class JanelaPrincipal {
 			}
 		});
 		inputAluno.setEnabled(true);
-		inputAluno.setBounds(60, 50, 800, 30);
+		inputAluno.setBounds(60, 50, 600, 30);
 		panel.add(inputAluno);
 		inputAluno.setColumns(10);
 		
@@ -682,7 +682,7 @@ public class JanelaPrincipal {
         lblResultadoRegistro = new JLabel("");
         panel.add(lblResultadoRegistro, BorderLayout.CENTER);
         lblResultadoRegistro.setFont(new Font("Dialog", Font.BOLD, 24));
-        lblResultadoRegistro.setBounds(1000, 50, 750, 30);
+        lblResultadoRegistro.setBounds(800, 50, 750, 30);
         
         frame.getContentPane().add(panel);
         inputAluno.grabFocus();
