@@ -839,7 +839,7 @@ delimiter $$
 create trigger tr_valida_nome_aluno before insert on aluno for each row 
 begin
 	if length(trim(new.nome_aluno)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome muito pequeno' ;
+		signal sqlstate '45000' set message_text = 'Nome do aluno muito pequeno' ;
 	else
 		set new.nome_aluno=trim(new.nome_aluno);
 	end if;
@@ -852,7 +852,7 @@ delimiter $$
 create trigger tr_update_valida_nome before update on aluno for each row 
 begin
 	if length(trim(new.nome_aluno)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome muito pequeno' ;
+		signal sqlstate '45000' set message_text = 'Nome do aluno muito pequeno' ;
 	else
 		set new.nome_aluno=trim(new.nome_aluno);
 	end if;
@@ -865,7 +865,7 @@ delimiter $$
 create trigger tr_insert_valida_nome_curso before insert on curso for each row 
 begin
 	if length(trim(new.nome_curso)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome muito pequeno' ;
+		signal sqlstate '45000' set message_text = 'Nome do curso muito pequeno' ;
 	else
 		set new.nome_curso = trim(new.nome_curso);
 	end if;
@@ -878,7 +878,7 @@ delimiter $$
 create trigger tr_update_valida_nome_curso before update on curso for each row 
 begin
 	if length(trim(new.nome_curso)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome muito pequeno' ;
+		signal sqlstate '45000' set message_text = 'Nome do curso muito pequeno' ;
 	else
 		set new.nome_curso = trim(new.nome_curso);
 	end if;
@@ -891,7 +891,7 @@ delimiter $$
 create trigger tr_insert_valida_nome_responsavel before insert on permissao for each row 
 begin
 	if length(trim(new.responsavel)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome muito pequeno' ;
+		signal sqlstate '45000' set message_text = 'Nome do responsavel muito pequeno' ;
 	else
 		set new.responsavel = trim(new.responsavel);
 	end if;
@@ -904,7 +904,7 @@ delimiter $$
 create trigger tr_update_valida_nome_responsavel before update on permissao for each row 
 begin
 	if length(trim(new.responsavel)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome muito pequeno' ;
+		signal sqlstate '45000' set message_text = 'Nome do responsavel muito pequeno' ;
 	else
 		set new.responsavel = trim(new.responsavel);
 	end if;
@@ -918,7 +918,7 @@ delimiter $$
 create trigger tr_insert_valida_nome_turma before insert on turma for each row 
 begin
 	if length(trim(new.nome_turma)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome muito pequeno' ;
+		signal sqlstate '45000' set message_text = 'Nome da turma muito pequeno' ;
 	else
 		set new.nome_turma = trim(new.nome_turma);
 	end if;
@@ -935,7 +935,7 @@ delimiter $$
 create trigger tr_update_valida_nome_turma before update on turma for each row 
 begin
 	if length(trim(new.nome_turma)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome muito pequeno' ;
+		signal sqlstate '45000' set message_text = 'Nome da turma muito pequeno' ;
 	else
 		set new.nome_turma = trim(new.nome_turma);
 	end if;
@@ -951,7 +951,7 @@ delimiter $$
 create trigger tr_insert_valida_nome_visitante before insert on visitante for each row 
 begin
 	if length(trim(new.nome_visitante)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome muito pequeno' ;
+		signal sqlstate '45000' set message_text = 'Nome do visitante muito pequeno' ;
 	else
 		set new.nome_visitante = trim(new.nome_visitante);
 	end if;
@@ -964,7 +964,7 @@ delimiter $$
 create trigger tr_update_valida_nome_visitante before update on visitante for each row 
 begin
 	if length(trim(new.nome_visitante)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome muito pequeno' ;
+		signal sqlstate '45000' set message_text = 'Nome do visitante muito pequeno' ;
 	else
 		set new.nome_visitante = trim(new.nome_visitante);
 	end if;
