@@ -157,7 +157,7 @@ public class JanelaAlteracaoTurma {
 		inputDataFinal.setBounds(244, 312, 362, 25);
 		panel.add(inputDataFinal);
 		
-		lblHorario = new JLabel("Novos horárioss de aula:");
+		lblHorario = new JLabel("Novos horários de aula:");
 		lblHorario.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblHorario.setBounds(58, 368, 195, 20);
 		panel.add(lblHorario);
@@ -253,7 +253,7 @@ public class JanelaAlteracaoTurma {
 				for (Horario quadroHorarios : horariosSelecionados) {
 					boolean insercaoPossui = possuiDao.inserir(turmaSelecionada.getIdTurma(), quadroHorarios.getIdHorario());
 					if (!insercaoPossui) {
-						JOptionPane.showMessageDialog(null, "ERRO ao alterar horárioss da turma no banco de dados");
+						JOptionPane.showMessageDialog(null, "ERRO ao alterar horários da turma no banco de dados");
 						limpaCampos();
 						return;
 					}
