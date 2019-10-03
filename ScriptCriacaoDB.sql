@@ -3,7 +3,7 @@ create database dbcolegio;
 use dbcolegio;
 create table curso(
 	id_curso int not null auto_increment primary key,
-    nome_curso varchar(100) unique not null
+    nome_curso varchar(100) not null
 );
 
 
@@ -861,29 +861,29 @@ delimiter ;
 
 
 -- curso trigger update pra validar nome maior q 3 carc e retirar espaço em branco
-delimiter $$
-create trigger tr_insert_valida_nome_curso before insert on curso for each row 
-begin
-	if length(trim(new.nome_curso)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome do curso muito pequeno' ;
-	else
-		set new.nome_curso = trim(new.nome_curso);
-	end if;
-end $$
-delimiter ;
+-- delimiter $$
+-- create trigger tr_insert_valida_nome_curso before insert on curso for each row 
+-- begin
+-- 	if length(trim(new.nome_curso)) < 3 then
+-- 		signal sqlstate '45000' set message_text = 'Nome do curso muito pequeno' ;
+-- 	else
+-- 		set new.nome_curso = trim(new.nome_curso);
+-- 	end if;
+-- end $$
+-- delimiter ;
 
 
 -- curso trigger update pra validar nome maior q 3 carc e retirar espaço em branco
-delimiter $$
-create trigger tr_update_valida_nome_curso before update on curso for each row 
-begin
-	if length(trim(new.nome_curso)) < 3 then
-		signal sqlstate '45000' set message_text = 'Nome do curso muito pequeno' ;
-	else
-		set new.nome_curso = trim(new.nome_curso);
-	end if;
-end $$
-delimiter ;
+-- delimiter $$
+-- create trigger tr_update_valida_nome_curso before update on curso for each row 
+-- begin
+-- 	if length(trim(new.nome_curso)) < 3 then
+-- signal sqlstate '45000' set message_text = 'Nome do curso muito pequeno' ;
+-- 	else
+-- 		set new.nome_curso = trim(new.nome_curso);
+-- 	end if;
+-- end $$
+-- delimiter ;
 
 
 -- permissao trigger update pra validar nome maior q 3 carc e retirar espaço em branco
