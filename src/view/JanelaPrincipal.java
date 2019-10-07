@@ -227,7 +227,7 @@ public class JanelaPrincipal {
 		lblAlunosFaltasExcessivas.setBounds(20, 170, 341, 25);
 		panel.add(lblAlunosFaltasExcessivas);
 		
-		lblAlunosAtrasados = new JLabel("Alunos atrasados");
+		lblAlunosAtrasados = new JLabel("Alunos ausentes");
 		lblAlunosAtrasados.setFont(new Font("Dialog", Font.BOLD, 19));
 		lblAlunosAtrasados.setBounds(290, 170, 295, 25);
 		panel.add(lblAlunosAtrasados);
@@ -724,7 +724,7 @@ public class JanelaPrincipal {
 		List<Horario> horariosAluno = horarioDao.pesquisarHorariosPorAlunoDia(alunoSelecionado);
 		LocalTime horaAtual = LocalTime.now();			
 		
-		//verifica se aluno j√° entrou no colegio
+		//verifica se aluno j· entrou no colegio
 		RegistroDao registroDao = new RegistroDao();
 		Registro registroAlunoPresente = registroDao.pesquisarPorAlunoPresenteNoColegio(alunoSelecionado);
 		PermissaoDao permissaoDao = new PermissaoDao();
@@ -732,7 +732,7 @@ public class JanelaPrincipal {
 		TurmaDao turmaDao = new TurmaDao();
 		List<Turma> turmasAluno = turmaDao.pesquisarPorAluno(alunoSelecionado);
 		if (!(registroAlunoPresente.getIdRegistro() == 0)) {
-				//verifica se horario atual √© posterior ao final da aula
+				//verifica se horario atual È posterior ao final da aula
 			if (horaAtual.isAfter(registroAlunoPresente.getHorario().getHorarioFinalAulaLocaTime())) {
 				registraSaida(registroDao, registroAlunoPresente);
 				return;

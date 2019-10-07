@@ -50,7 +50,7 @@ public class PermissaoDao {
 			return false;			
 		}
 		try {
-			PreparedStatement pst = conn.prepareStatement("upsdate permissao set responsavel = ?, tipo = ?, dt_permissao = ?  where id_permissao = ?");
+			PreparedStatement pst = conn.prepareStatement("update permissao set responsavel = ?, tipo = ?, dt_permissao = ?  where id_permissao = ?");
 			pst.setString(1, permissao.getResponsavel());
 			pst.setString(2, permissao.getTipoPermissao());
 			pst.setString(3, sdf.format(permissao.getDataPermissao()));
