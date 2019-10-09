@@ -76,7 +76,6 @@ public class JanelaPrincipal {
 	private JMenuItem mntmExcluirPermissaoTurma;
 	private JMenuItem mntmExcluirPermissaoVisitante;
 	private JMenuItem mntmExcluirDiaDeAula;
-	private JMenu mnRelatorios;
 	private Dimension tamanhoTela;
 	private java.awt.List jListAlunosComPermissao;
 	private java.awt.List jListTurmasComPermissao;
@@ -120,11 +119,6 @@ public class JanelaPrincipal {
 	private static JanelaExclusaoPermissaoAluno frameJanelaExclusaoPermissaoAluno = null;
 	private static JanelaExclusaoPermissaoTurma frameJanelaExclusaoPermissaoTurma = null;
 	private static JanelaExclusaoPermissaoVisitante frameJanelaExclusaoPermissaoVisitante = null;
-	private static JanelaRelatorioFrequenciaAluno frameJanelaRelatorioFrequenciaAluno = null;
-	private static JanelaRelatorioFrequenciaTurma frameJanelaRelatorioFrequenciaTurma = null;
-	private static JanelaRelatorioAusentes frameJanelaRelatorioAusentes = null;
-	private static JanelaRelatorioCriticos frameJanelaRelatorioCriticos = null;
-	private static JanelaRelatorioAPOIA frameJanelaRelatorioAPOIA = null;
 	private static JanelaImportacao frameJanelaImportacao = null;
 	
 	private JMenuItem mntmFrequenciaPorTurma;
@@ -575,75 +569,8 @@ public class JanelaPrincipal {
 		});
 		mntmExcluirPermissaoVisitante.setFont(new Font("Dialog", Font.BOLD, 22));
 		mnPermitir.add(mntmExcluirPermissaoVisitante);
+
 		
-		mnRelatorios = new JMenu("Relatórios");
-		mnRelatorios.setFont(new Font("Dialog", Font.BOLD, 22));
-		menuBar.add(mnRelatorios);
-		
-		mntmFrequenciaPorAluno = new JMenuItem("Frequencia por aluno");
-		mntmFrequenciaPorAluno.setFont(new Font("Dialog", Font.BOLD, 22));
-		mntmFrequenciaPorAluno.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (frameJanelaRelatorioFrequenciaAluno == null) {
-					frameJanelaRelatorioFrequenciaAluno = new JanelaRelatorioFrequenciaAluno(instanciaJanelaPrincipal);
-				}
-				frameJanelaRelatorioFrequenciaAluno.initialize(instanciaJanelaPrincipal);
-				frameJanelaRelatorioFrequenciaAluno.frame.setVisible(true);
-			}
-		});
-		mnRelatorios.add(mntmFrequenciaPorAluno);
-		
-		mntmFrequenciaPorTurma = new JMenuItem("Frequencia por turma");
-		mntmFrequenciaPorTurma.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (frameJanelaRelatorioFrequenciaTurma == null) {
-					frameJanelaRelatorioFrequenciaTurma = new JanelaRelatorioFrequenciaTurma(instanciaJanelaPrincipal);
-				}
-				frameJanelaRelatorioFrequenciaTurma.initialize(instanciaJanelaPrincipal);
-				frameJanelaRelatorioFrequenciaTurma.frame.setVisible(true);
-			}
-		});
-		mntmFrequenciaPorTurma.setFont(new Font("Dialog", Font.BOLD, 22));
-		mnRelatorios.add(mntmFrequenciaPorTurma);
-		
-		mntmAlunosAusentes = new JMenuItem("Alunos ausentes");
-		mntmAlunosAusentes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (frameJanelaRelatorioAusentes == null) {
-					frameJanelaRelatorioAusentes = new JanelaRelatorioAusentes(instanciaJanelaPrincipal);
-				}
-				frameJanelaRelatorioAusentes.initialize(instanciaJanelaPrincipal);
-				frameJanelaRelatorioAusentes.frame.setVisible(true);
-			}
-		});
-		mntmAlunosAusentes.setFont(new Font("Dialog", Font.BOLD, 22));
-		mnRelatorios.add(mntmAlunosAusentes);
-		
-		mntmAlunosCriticos = new JMenuItem("Alunos críticos");
-		mntmAlunosCriticos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (frameJanelaRelatorioCriticos == null) {
-					frameJanelaRelatorioCriticos = new JanelaRelatorioCriticos(instanciaJanelaPrincipal);
-				}
-				frameJanelaRelatorioCriticos.initialize(instanciaJanelaPrincipal);
-				frameJanelaRelatorioCriticos.frame.setVisible(true);
-			}
-		});
-		mntmAlunosCriticos.setFont(new Font("Dialog", Font.BOLD, 22));
-		mnRelatorios.add(mntmAlunosCriticos);
-		
-		mntmAlunosProgramaApoia = new JMenuItem("Alunos programa APOIA");
-		mntmAlunosProgramaApoia.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (frameJanelaRelatorioAPOIA == null) {
-					frameJanelaRelatorioAPOIA = new JanelaRelatorioAPOIA(instanciaJanelaPrincipal);
-				}
-				frameJanelaRelatorioAPOIA.initialize(instanciaJanelaPrincipal);
-				frameJanelaRelatorioAPOIA.frame.setVisible(true);
-			}
-		});
-		mntmAlunosProgramaApoia.setFont(new Font("Dialog", Font.BOLD, 22));
-		mnRelatorios.add(mntmAlunosProgramaApoia);
 		
 		mnNewMenu = new JMenu("Importação");
 		mnNewMenu.setFont(new Font("Dialog", Font.BOLD, 22));
