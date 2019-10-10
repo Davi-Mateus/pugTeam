@@ -48,7 +48,7 @@ import javax.swing.Timer;
 import javax.swing.JButton;
 
 public class JanelaPrincipal {
-	private int alunosDoDia =0;
+	private int alunosDoDia;
 	private JLabel lblAlunosDia;
 	private JFrame frame;
 	private JMenuBar menuBar;
@@ -89,7 +89,6 @@ public class JanelaPrincipal {
 	private JLabel lblAlunosAtrasados;
 	private JLabel lblTurmasComPermissao;
 	private JLabel lblResultadoRegistro;
-	private JMenuItem mntmFrequenciaPorAluno;
 	private JTextField inputAluno;
 	private JButton btnRegistrar;
 	
@@ -141,7 +140,6 @@ public class JanelaPrincipal {
 			}
 		});
 	}
-
 	/**
 	 * Create the application.
 	 */
@@ -155,7 +153,7 @@ public class JanelaPrincipal {
 	public void initialize() {
 		
 		tamanhoTela = Toolkit.getDefaultToolkit().getScreenSize();
-		
+		alunosDoDia = 0;
 		frame = new JFrame();
 		frame.setSize(tamanhoTela);
 		frame.setLocation(0,0);
@@ -688,7 +686,7 @@ public class JanelaPrincipal {
 			return;
 		}
 		
-		//verifica se hora atual estÃ¡ entre o horario de inicio da aula e 1h antes para cada aula do dia do aluno
+		//verifica se hora atual está¡ entre o horario de inicio da aula e 1h antes para cada aula do dia do aluno
 		for (Horario horario : horariosAluno) {	
 			if (horaAtual.isAfter(horario.getHorarioInicioAulaLocaTime().minusHours(1)) && horaAtual.isBefore(horario.getHorarioInicioAulaLocaTime())) {
 				registraEntrada(registroDao, horaAtual, horario);
@@ -736,6 +734,7 @@ public class JanelaPrincipal {
 		registro.setIdTurma(((Turma)horario.getTurmas().get(0)).getIdTurma());
 		registro.setHorario(horario);
 		registroDao.entrar(registro);
+		alunosDoDia += 1;
 		mostraMensagem("Entrada autorizada", new Color(0, 153, 0));
 		return;
 	}
@@ -743,6 +742,9 @@ public class JanelaPrincipal {
 	private void registraSaida(RegistroDao registroDao, Registro registroAlunoPresente) {
 		registroAlunoPresente.setHoraSaida(new Date());
 		registroDao.sair(registroAlunoPresente);
+		alunosDoDia -= 1;
+		lblAlunosDia.revalidate();
+		lblAlunosDia.repaint();
 		mostraMensagem("Saída autorizada", new Color(0, 153, 0));
 		return;
 	}

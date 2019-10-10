@@ -15,7 +15,7 @@ public class ImportacaoDao {
 			return false;			
 		}
 		try {
-			PreparedStatement pst1 = conn.prepareStatement("load data infile ?" + "into table temporaria fields terminated by ';' ignore 1 lines" + "(matriz, curso, turno, serie, turma, sala, numero, matricula, nome, sexo, dt_nascimento, identidade, dt_matricula, cpf)");
+			PreparedStatement pst1 = conn.prepareStatement("load data infile ?" + "into table temporaria fields terminated by ';' ignore 9 lines" + "(numero, matricula, nome, sexo, dt_nascimento, identidade, dt_matricula, cpf)");
 			pst1.setString(1, caminho);
 			pst1.execute();
 			PreparedStatement pst2 = conn.prepareStatement("call pr_add_csv ()");
