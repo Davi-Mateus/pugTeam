@@ -48,7 +48,8 @@ import javax.swing.Timer;
 import javax.swing.JButton;
 
 public class JanelaPrincipal {
-
+	private int alunosDoDia =0;
+	private JLabel lblAlunosDia;
 	private JFrame frame;
 	private JMenuBar menuBar;
 	private JMenu mnCadastrar;
@@ -121,10 +122,6 @@ public class JanelaPrincipal {
 	private static JanelaExclusaoPermissaoVisitante frameJanelaExclusaoPermissaoVisitante = null;
 	private static JanelaImportacao frameJanelaImportacao = null;
 	
-	private JMenuItem mntmFrequenciaPorTurma;
-	private JMenuItem mntmAlunosAusentes;
-	private JMenuItem mntmAlunosCriticos;
-	private JMenuItem mntmAlunosProgramaApoia;
 	private JMenuItem mnImportacaoCSV;
 	private JMenu mnNewMenu;
 
@@ -230,6 +227,11 @@ public class JanelaPrincipal {
 		lblAlunosPermissao.setFont(new Font("Dialog", Font.BOLD, 19));
 		lblAlunosPermissao.setBounds(560, 170, 348, 25);
 		panel.add(lblAlunosPermissao);
+		
+		lblAlunosDia = new JLabel("Alunos do dia: "+alunosDoDia);
+		lblAlunosDia.setFont(new Font("Dialog", Font.BOLD, 19));
+		lblAlunosDia.setBounds(230, 100, 348, 25);
+		panel.add(lblAlunosDia);
 		
 		lblTurmasComPermissao = new JLabel("Turmas com permissão");
 		lblTurmasComPermissao.setFont(new Font("Dialog", Font.BOLD, 19));
