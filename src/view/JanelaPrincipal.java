@@ -49,7 +49,8 @@ import javax.swing.JButton;
 
 public class JanelaPrincipal {
 	private int alunosDoDia;
-	private JLabel lblAlunosDia;
+	private JTextField lblAlunosDia;
+	private JButton resetAlunosDia;
 	private JFrame frame;
 	private JMenuBar menuBar;
 	private JMenu mnCadastrar;
@@ -226,9 +227,10 @@ public class JanelaPrincipal {
 		lblAlunosPermissao.setBounds(560, 170, 348, 25);
 		panel.add(lblAlunosPermissao);
 		
-		lblAlunosDia = new JLabel("Alunos do dia: "+alunosDoDia);
+		lblAlunosDia = new JTextField("Alunos Presentes: "+Integer.toString(alunosDoDia), 30);
 		lblAlunosDia.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblAlunosDia.setBounds(230, 100, 348, 25);
+		lblAlunosDia.setBounds(300, 100, 200, 25);
+		lblAlunosDia.setEditable(false);
 		panel.add(lblAlunosDia);
 		
 		lblTurmasComPermissao = new JLabel("Turmas com permissão");
@@ -285,8 +287,19 @@ public class JanelaPrincipal {
 				registra();
 			}	
 		});
-		btnRegistrar.setBounds(60, 100, 117, 25);
+		btnRegistrar.setBounds(542, 100, 117, 25);
 		panel.add(btnRegistrar);
+		
+		resetAlunosDia = new JButton("Resetar contagem");
+		resetAlunosDia.setEnabled(true);
+		resetAlunosDia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				alunosDoDia = 0;
+				lblAlunosDia.setText("Alunos do dia: "+Integer.toString(alunosDoDia));
+			}
+		});
+		resetAlunosDia.setBounds(60	, 100, 200, 25);
+		panel.add(resetAlunosDia);
 		
 		menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
@@ -735,6 +748,7 @@ public class JanelaPrincipal {
 		registro.setHorario(horario);
 		registroDao.entrar(registro);
 		alunosDoDia += 1;
+		lblAlunosDia.setText("Alunos do dia: "+Integer.toString(alunosDoDia));
 		mostraMensagem("Entrada autorizada", new Color(0, 153, 0));
 		return;
 	}
@@ -743,6 +757,7 @@ public class JanelaPrincipal {
 		registroAlunoPresente.setHoraSaida(new Date());
 		registroDao.sair(registroAlunoPresente);
 		alunosDoDia -= 1;
+		lblAlunosDia.setText("Alunos do dia: "+Integer.toString(alunosDoDia));
 		lblAlunosDia.revalidate();
 		lblAlunosDia.repaint();
 		mostraMensagem("Saída autorizada", new Color(0, 153, 0));
