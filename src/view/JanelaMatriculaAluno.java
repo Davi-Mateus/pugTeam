@@ -15,6 +15,7 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 import javax.swing.JPopupMenu;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -97,19 +98,8 @@ public class JanelaMatriculaAluno {
 			@Override
 			public void keyReleased(KeyEvent arg0) {
 				JPopupMenu popupMenu = new JPopupMenu();
-				List<Aluno> alunos = new ArrayList<>();
 				AlunoDao alunoDao = new AlunoDao();
-				alunos = alunoDao.pesquisarPorNome(inputAluno.getText());
-				for (Aluno aluno: alunos) {
-					JMenuItem item = new JMenuItem(aluno.toString());
-					popupMenu.add(item);
-					item.addActionListener(new ActionListener() {
-			            public void actionPerformed(ActionEvent e) {
-			                inputAluno.setText(aluno.toString());
-			                alunoSelecionado = aluno;
-			            }
-			        });
-				}
+				alunoSelecionado = alunoDao.pesquisarPorNumeroMatricula(Long.parseLong(inputAluno.getText()));
 				popupMenu.show(inputAluno, 0, 25);
 				inputAluno.requestFocus();
 			}
@@ -118,6 +108,8 @@ public class JanelaMatriculaAluno {
 		inputAluno.setBounds(244, 32, 362, 25);
 		panel.add(inputAluno);
 		
+		
+		
 		btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -125,7 +117,7 @@ public class JanelaMatriculaAluno {
 				Object turma = comboBoxTurma.getSelectedItem();
 				MatriculaDao matriculaDao = new MatriculaDao();
 			
-				if (alunoSelecionado.getIdAluno() == 0) {
+				if ((alunoSelecionado.getIdAluno() == 0) && (alunoSelecionado.getNumeroMatricula()==null)) {
 					JOptionPane.showMessageDialog(null, "ERRO, o nome do aluno não foi selecionado corretamente");
 					return;
 				}
@@ -159,6 +151,14 @@ public class JanelaMatriculaAluno {
 				
 			}
 		});
+		inputAluno.addKeyListener(new KeyAdapter() {
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					btnSalvar.doClick();
+				}
+			}
+		});
+		
 		btnSalvar.setBounds(257, 333, 117, 25);
 		panel.add(btnSalvar);
 		
