@@ -1,6 +1,0 @@
-matriz;curso;turno;serie;turma;sala;numero;matricula;nome;sexo;dt_nascimento;identidade;dt_matricula;cpf
-1;Codificando o Futuro;Diurno;1 Série;INTA;E12;1234;20170101;Matheus Felipe Colla;Masculino;18/08/2002;36.938.356-4;03/01/2017;44441631359
-2;Codificando o Futuro;Noturno;2 Série;INTB;F25;5678;20170102;Davi Werlang Pasquali;Masculino;02/03/2002;39.422.105-9;07/01/2017;52841463443
-3;Codificando o Futuro;Diurno;1 Série;INTA;D22;1235;20170103;Luiz Gustavo Mella;Masculino;29/10/2001;18.804.687-2;05/02/2018;35176040204
-4;Desenvolvimento de Sistemas;Noturno;4 Fase;DSIA;D24;6542;20180101;Julia Cardoso;Feminino;17/02/2001;47.310.617-6;12/01/2019;35176040204
-5;Técnico em Edificações;Diurno;3 Fase;TE3A;E11;2135;20190101;Carolina Gonçalves;Feminino;01/11/2003;26.124.759-1;01/11/2017;35176040204
