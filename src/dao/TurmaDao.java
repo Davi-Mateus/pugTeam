@@ -204,7 +204,7 @@ public class TurmaDao {
 			return null;			
 		}
 		try {
-			PreparedStatement pst = conn.prepareStatement("select * from turma where id_aluno = ?");
+			PreparedStatement pst = conn.prepareStatement("select * from turmas_por_aluno where id_aluno = ?");
 			pst.setInt(1, aluno.getIdAluno());
 			ResultSet rs = pst.executeQuery();
 			List<Turma> turmas = new ArrayList<>();
