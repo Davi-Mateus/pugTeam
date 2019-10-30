@@ -98,7 +98,7 @@ public class HorarioDao {
 			return null;			
 		}
 		try {
-			PreparedStatement pst = conn.prepareStatement("select * from horarios where dia_semana like ?");
+			PreparedStatement pst = conn.prepareStatement("select * from horario where dia_semana like ?");
 			pst.setString(1, nome + "%");
 			ResultSet rs = pst.executeQuery();
 			List<Horario> qhs = new ArrayList<>();
@@ -132,7 +132,7 @@ public class HorarioDao {
 			return null;			
 		}
 		try {
-			PreparedStatement pst = conn.prepareStatement("select * from horarios where id_horario = ?");
+			PreparedStatement pst = conn.prepareStatement("select * from horario where id_horario = ?");
 			pst.setInt(1, idHorario);
 			ResultSet rs = pst.executeQuery();
 			Horario qh = new Horario();
@@ -164,7 +164,7 @@ public class HorarioDao {
 			return null;			
 		}
 		try {
-			PreparedStatement pst = conn.prepareStatement("select * from horarios_deletaveis where dia_semana like ?");
+			PreparedStatement pst = conn.prepareStatement("select * from horario where dia_semana like ?");
 			pst.setString(1, nome + "%");
 			ResultSet rs = pst.executeQuery();
 			List<Horario> qhs = new ArrayList<>();

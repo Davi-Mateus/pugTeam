@@ -80,7 +80,7 @@ public class JanelaAlteracaoAluno {
 		panel.add(lblNomeAluno);
 		
 		inputNomeAlunoNovo = new JTextField();
-		inputNomeAlunoNovo.setBounds(244, 88, 362, 25);
+		inputNomeAlunoNovo.setBounds(250, 88, 362, 25);
 		panel.add(inputNomeAlunoNovo);
 		inputNomeAlunoNovo.setColumns(10);
 		
@@ -90,7 +90,7 @@ public class JanelaAlteracaoAluno {
 		panel.add(lblNumeroMatricula);
 		
 		inputNumeroMatriculaNova = new JTextField();
-		inputNumeroMatriculaNova.setBounds(244, 144, 362, 25);
+		inputNumeroMatriculaNova.setBounds(250, 144, 362, 25);
 		panel.add(inputNumeroMatriculaNova);
 		inputNumeroMatriculaNova.setColumns(10);
 		
@@ -183,7 +183,7 @@ public class JanelaAlteracaoAluno {
 			}
 		});
 		inputAluno.setColumns(10);
-		inputAluno.setBounds(244, 32, 362, 25);
+		inputAluno.setBounds(250, 32, 362, 25);
 		panel.add(inputAluno);
 		
 		lblAluno = new JLabel("Aluno:");

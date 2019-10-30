@@ -136,15 +136,15 @@ public class JanelaExclusaoDiaAula {
 						limpaCampos();
 						preencheComboBoxTurma();
 						instanciaJanelaPrincipal.preencheAlunosCriticos();
-						JOptionPane.showMessageDialog(null, "Dia de aula exclu√≠da com sucesso");
+						JOptionPane.showMessageDialog(null, "Dia de aula excluÌda com sucesso");
 						return;
 					}
-					JOptionPane.showMessageDialog(null, "ERRO, a turma n√£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a turma n„o foi selecionada");
 					return;
 				}
 				
 				if (data == null) {
-					JOptionPane.showMessageDialog(null, "ERRO, a data n√£o foi selecionada");
+					JOptionPane.showMessageDialog(null, "ERRO, a data n„o foi selecionada");
 					return;
 				}
 				
@@ -176,7 +176,7 @@ public class JanelaExclusaoDiaAula {
 				instanciaJanelaPrincipal.preencheAlunosAtrasados();
 				instanciaJanelaPrincipal.preencheAlunosCriticos();
 				instanciaJanelaPrincipal.criaSchedulerPorAula();
-				JOptionPane.showMessageDialog(null, "Dia de aula exclu√≠da com sucesso");
+				JOptionPane.showMessageDialog(null, "Dia de aula excluÌda com sucesso");
 			}
 		});
 		btnExcluir.setBounds(257, 333, 117, 25);
@@ -209,7 +209,7 @@ public class JanelaExclusaoDiaAula {
 			} catch (Exception e) {
 			}
 		}
-		lblAulaASeremExcluidas = new JLabel("Aula a serem exclu√≠das:");
+		lblAulaASeremExcluidas = new JLabel("Aula a serem excluÌdas:");
 		lblAulaASeremExcluidas.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblAulaASeremExcluidas.setBounds(58, 144, 216, 20);
 		panel.add(lblAulaASeremExcluidas);
