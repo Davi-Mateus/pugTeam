@@ -98,8 +98,11 @@ public class JanelaExclusaoHorario {
 					return;
 				}
 				
-				if (confirmarExlcusao == 2) {
+				else if (confirmarExlcusao == 2) {
 					limpaCampos();
+					return;
+				}
+				else if(confirmarExlcusao != 0) {
 					return;
 				}
 				
@@ -107,7 +110,7 @@ public class JanelaExclusaoHorario {
 				boolean exclusaoPossui = possuiDao.excluirPorHorario(horario.getIdHorario());
 				
 				if (!exclusaoPossui) {
-					JOptionPane.showMessageDialog(null, "ERRO ao excluir o horários da turma no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao excluir o horários da turma no banco de dados.");
 					limpaCampos();
 					return;
 					
@@ -117,7 +120,7 @@ public class JanelaExclusaoHorario {
 				boolean exclusaoDiaAula = diaAulaDao.excluirPorTurma(horario.getIdHorario());
 				
 				if (!exclusaoDiaAula) {
-					JOptionPane.showMessageDialog(null, "ERRO ao excluir o dia de aula da turma no banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao excluir o dia de aula da turma no banco de dados.");
 					limpaCampos();
 					return;
 					
@@ -127,7 +130,7 @@ public class JanelaExclusaoHorario {
 				boolean exclusao = horarioDaoNovo.excluir(horario);
 				
 				if (!exclusao) {
-					JOptionPane.showMessageDialog(null, "ERRO ao excluir o horários de aula do banco de dados");
+					JOptionPane.showMessageDialog(null, "ERRO ao excluir o horários de aula do banco de dados ou turma cadastrada em alguma turma.");
 					limpaCampos();
 					return;
 				}

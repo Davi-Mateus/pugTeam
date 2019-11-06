@@ -29,6 +29,10 @@ public class JanelaCadastroHorario {
 	private JLabel lblHoraFinal;
 	private JFormattedTextField inputHoraFinal;
 	private JFormattedTextField inputHoraInicio;
+	String horaI="";
+	String minI="";
+	String horaF="";
+	String minF="";
 
 	private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 	private MaskFormatter mfHoraInicio = new MaskFormatter();
@@ -164,6 +168,16 @@ public class JanelaCadastroHorario {
 				}
 				if (horaInicio.after(horaFinal)) {
 					JOptionPane.showMessageDialog(null, "ERRO, a hora de inicio é posterior à hora final das aulas");
+					return;
+				}
+				
+				horaI=(inputHoraInicio.getText()).substring(0, 2);//if hora>24 da erro
+				minI=(inputHoraInicio.getText()).substring(3, 5);//if min>59 da erro
+				horaF=(inputHoraFinal.getText()).substring(0, 2);//if hora>24 da erro
+				minF=(inputHoraFinal.getText()).substring(3, 5);//if min>59 da erro
+//				JOptionPane.showMessageDialog(null, "horaI"+horaI+"minI"+minI+"horaF"+horaF+"minF"+minF);
+				if((Integer.parseInt(horaI)>23) || (Integer.parseInt(minI)>59) || (Integer.parseInt(horaF)>24) || (Integer.parseInt(minF)>59)) {
+					JOptionPane.showMessageDialog(null, "ERRO, as horas digitadas são inválidas");
 					return;
 				}
 				

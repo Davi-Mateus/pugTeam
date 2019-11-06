@@ -1,3 +1,4 @@
+drop database if exists dbcolegio;
 create database if not exists dbcolegio;
 use dbcolegio;
 create table curso(

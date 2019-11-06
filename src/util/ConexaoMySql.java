@@ -14,7 +14,7 @@ public class ConexaoMySql {
 				
 				String url = "jdbc:mysql://localhost/dbcolegio";
 				String user = "root";
-				String password = "root";
+				String password = "";
 				
 				connection = DriverManager.getConnection(url, user, password);
 				return connection;
