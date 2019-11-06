@@ -295,7 +295,7 @@ public class JanelaPrincipal {
 		resetAlunosDia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				alunosDoDia = 0;
-				lblAlunosDia.setText("Alunos do dia: "+Integer.toString(alunosDoDia));
+				lblAlunosDia.setText("Alunos Presentes: "+Integer.toString(alunosDoDia));
 			}
 		});
 		resetAlunosDia.setBounds(60	, 100, 200, 25);
@@ -756,7 +756,9 @@ public class JanelaPrincipal {
 	private void registraSaida(RegistroDao registroDao, Registro registroAlunoPresente) {
 		registroAlunoPresente.setHoraSaida(new Date());
 		registroDao.sair(registroAlunoPresente);
-		alunosDoDia -= 1;
+		if(alunosDoDia!=0) {
+		alunosDoDia -= 1; 
+		}
 		lblAlunosDia.setText("Alunos do dia: "+Integer.toString(alunosDoDia));
 		lblAlunosDia.revalidate();
 		lblAlunosDia.repaint();
