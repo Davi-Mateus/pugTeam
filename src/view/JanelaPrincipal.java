@@ -217,7 +217,7 @@ public class JanelaPrincipal {
 		lblAlunosFaltasExcessivas.setBounds(20, 170, 341, 25);
 		panel.add(lblAlunosFaltasExcessivas);
 		
-		lblAlunosAtrasados = new JLabel("Alunos ausentes");
+		lblAlunosAtrasados = new JLabel("Alunos atrasados");
 		lblAlunosAtrasados.setFont(new Font("Dialog", Font.BOLD, 19));
 		lblAlunosAtrasados.setBounds(290, 170, 295, 25);
 		panel.add(lblAlunosAtrasados);

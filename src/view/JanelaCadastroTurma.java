@@ -135,7 +135,7 @@ public class JanelaCadastroTurma {
 		comboBoxAno.setBounds(244, 144, 362, 25);
 		panel.add(comboBoxAno);
 		comboBoxAno.addItem("Selecione o ano");
-		for (int i = 2018; i <= anoAtual + 1; i++) {
+		for (int i = anoAtual; i <= anoAtual + 2; i++) {
 			comboBoxAno.addItem(i);
 		}
 		
