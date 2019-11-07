@@ -85,7 +85,6 @@ public class JanelaPrincipal {
 	private java.awt.List jListAlunosAtrasados;
 	private JLabel lblVisitantes;
 	private JLabel lblAlunosPermissao;
-	private JLabel lblAlunosFaltasExcessivas;
 	private JLabel lblAlunosAtrasados;
 	private JLabel lblTurmasComPermissao;
 	private JLabel lblResultadoRegistro;
