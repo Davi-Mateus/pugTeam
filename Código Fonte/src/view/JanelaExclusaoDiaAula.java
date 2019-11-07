@@ -153,8 +153,11 @@ public class JanelaExclusaoDiaAula {
 					return;
 				}
 				
-				if (confirmarExclusao == 2) {
+				else if (confirmarExclusao == 2) {
 					limpaCampos();
+					return;
+				}
+				else if(confirmarExclusao != 0) {
 					return;
 				}
 				

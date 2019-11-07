@@ -100,8 +100,11 @@ public class JanelaExclusaoTurma {
 					return;
 				}
 				
-				if (confirmarExlcusao == 2) {
+				else if (confirmarExlcusao == 2) {
 					limpaCampos();
+					return;
+				}
+				else if(confirmarExlcusao != 0) {
 					return;
 				}
 				
