@@ -1,9 +1,9 @@
 drop database if exists dbcolegio;
-create database dbcolegio;
+create database if not exists dbcolegio;
 use dbcolegio;
 create table curso(
 	id_curso int not null auto_increment primary key,
-    nome_curso varchar(100) not null
+    nome_curso varchar(100)
 );
 
 
@@ -1018,3 +1018,4 @@ begin
 	end if;
 end $$
 delimiter ;
+select * from dbcolegio.aluno;
