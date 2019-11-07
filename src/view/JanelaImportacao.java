@@ -79,7 +79,6 @@ public class JanelaImportacao {
 					JOptionPane.showMessageDialog(null, "Importação efetuada com sucesso");
 				}
 				instanciaJanelaPrincipal.preencheAlunosAtrasados();
-				instanciaJanelaPrincipal.preencheAlunosCriticos();
 				limpaCampos();
 			}
 		});

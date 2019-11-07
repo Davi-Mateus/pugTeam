@@ -261,7 +261,6 @@ public class JanelaAlteracaoTurma {
 								
 				limpaCampos();
 				preencheComboBoxTurma();
-				instanciaJanelaPrincipal.preencheAlunosCriticos();
 				instanciaJanelaPrincipal.criaSchedulerPorAula();
 				JOptionPane.showMessageDialog(null, "Turma alterada com sucesso");
 			

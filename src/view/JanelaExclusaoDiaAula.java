@@ -135,7 +135,6 @@ public class JanelaExclusaoDiaAula {
 						}
 						limpaCampos();
 						preencheComboBoxTurma();
-						instanciaJanelaPrincipal.preencheAlunosCriticos();
 						JOptionPane.showMessageDialog(null, "Dia de aula excluída com sucesso");
 						return;
 					}
@@ -174,7 +173,6 @@ public class JanelaExclusaoDiaAula {
 				limpaCampos();
 				preencheComboBoxTurma();
 				instanciaJanelaPrincipal.preencheAlunosAtrasados();
-				instanciaJanelaPrincipal.preencheAlunosCriticos();
 				instanciaJanelaPrincipal.criaSchedulerPorAula();
 				JOptionPane.showMessageDialog(null, "Dia de aula excluída com sucesso");
 			}

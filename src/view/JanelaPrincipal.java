@@ -82,7 +82,6 @@ public class JanelaPrincipal {
 	private java.awt.List jListAlunosComPermissao;
 	private java.awt.List jListTurmasComPermissao;
 	private java.awt.List jListVisitantes;
-	private java.awt.List jListAlunosCriticos;
 	private java.awt.List jListAlunosAtrasados;
 	private JLabel lblVisitantes;
 	private JLabel lblAlunosPermissao;
@@ -165,19 +164,11 @@ public class JanelaPrincipal {
 		JPanel panel = new JPanel();
 		panel.setPreferredSize(tamanhoTela);
 		panel.setLayout(null);
-								
-		jListAlunosCriticos = new java.awt.List();
-		jListAlunosCriticos.setBackground(Color.WHITE);
-		jListAlunosCriticos.setFont(new Font("Dialog", Font.BOLD, 16));
-		jListAlunosCriticos.setBounds(20, 200, 250, 450);
-		jListAlunosCriticos.setFocusable(false);
-		panel.add(jListAlunosCriticos);
-		preencheAlunosCriticos();
 		
 		jListAlunosAtrasados = new java.awt.List();
 		jListAlunosAtrasados.setBackground(Color.WHITE);
 		jListAlunosAtrasados.setFont(new Font("Dialog", Font.BOLD, 16));
-		jListAlunosAtrasados.setBounds(290, 200, 250, 450);
+		jListAlunosAtrasados.setBounds(25, 200, 300, 450);
 		jListAlunosAtrasados.setFocusable(false);
 		panel.add(jListAlunosAtrasados);
 		criaSchedulerPorAula();
@@ -186,7 +177,7 @@ public class JanelaPrincipal {
 		jListAlunosComPermissao = new java.awt.List();
 		jListAlunosComPermissao.setBackground(Color.WHITE);
 		jListAlunosComPermissao.setFont(new Font("Dialog", Font.BOLD, 16));
-		jListAlunosComPermissao.setBounds(560, 200, 250, 450);
+		jListAlunosComPermissao.setBounds(365, 200, 300, 450);
 		jListAlunosComPermissao.setFocusable(false);
 		panel.add(jListAlunosComPermissao);
 		preencheAlunosComPermissao();
@@ -194,7 +185,7 @@ public class JanelaPrincipal {
 		jListTurmasComPermissao = new java.awt.List();
 		jListTurmasComPermissao.setBackground(Color.WHITE);
 		jListTurmasComPermissao.setFont(new Font("Dialog", Font.BOLD, 16));
-		jListTurmasComPermissao.setBounds(830, 200, 250, 450);
+		jListTurmasComPermissao.setBounds(705, 200, 300, 450);
 		jListTurmasComPermissao.setFocusable(false);
 		panel.add(jListTurmasComPermissao);
 		preencheTurmasComPermissao();
@@ -202,29 +193,24 @@ public class JanelaPrincipal {
 		jListVisitantes = new java.awt.List();
 		jListVisitantes.setBackground(Color.WHITE);
 		jListVisitantes.setFont(new Font("Dialog", Font.BOLD, 16));
-		jListVisitantes.setBounds(1100, 200, 250, 450);
+		jListVisitantes.setBounds(1045, 200, 300, 450);
 		jListVisitantes.setFocusable(false);
 		panel.add(jListVisitantes);
 		preencheVisitantesDia();
 		
 		lblVisitantes = new JLabel("Visitantes");
 		lblVisitantes.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblVisitantes.setBounds(1100, 170, 201, 25);
+		lblVisitantes.setBounds(1145, 170, 201, 25);
 		panel.add(lblVisitantes);
-		
-		lblAlunosFaltasExcessivas = new JLabel("Alunos criticos");
-		lblAlunosFaltasExcessivas.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblAlunosFaltasExcessivas.setBounds(20, 170, 341, 25);
-		panel.add(lblAlunosFaltasExcessivas);
 		
 		lblAlunosAtrasados = new JLabel("Alunos atrasados");
 		lblAlunosAtrasados.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblAlunosAtrasados.setBounds(290, 170, 295, 25);
+		lblAlunosAtrasados.setBounds(95, 170, 295, 25);
 		panel.add(lblAlunosAtrasados);
 		
 		lblAlunosPermissao = new JLabel("Alunos com permissão");
 		lblAlunosPermissao.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblAlunosPermissao.setBounds(560, 170, 348, 25);
+		lblAlunosPermissao.setBounds(404, 170, 348, 25);
 		panel.add(lblAlunosPermissao);
 		
 		lblAlunosDia = new JTextField("Alunos Presentes: "+Integer.toString(alunosDoDia), 30);
@@ -235,7 +221,7 @@ public class JanelaPrincipal {
 		
 		lblTurmasComPermissao = new JLabel("Turmas com permissão");
 		lblTurmasComPermissao.setFont(new Font("Dialog", Font.BOLD, 19));
-		lblTurmasComPermissao.setBounds(830, 170, 348, 25);
+		lblTurmasComPermissao.setBounds(740, 170, 348, 25);
 		panel.add(lblTurmasComPermissao);
 		
 		inputAluno = new JTextField();
@@ -764,17 +750,6 @@ public class JanelaPrincipal {
 		lblAlunosDia.repaint();
 		mostraMensagem("Saída autorizada", new Color(0, 153, 0));
 		return;
-	}
-	
-	public void preencheAlunosCriticos() {
-		jListAlunosCriticos.removeAll();
-		AlunoDao alunoDao = new AlunoDao();
-		List<Aluno> alunos = alunoDao.pesquisarAlunoCriticosMes();
-		for (Aluno aluno : alunos) {
-			jListAlunosCriticos.add(aluno.toString());
-		}
-		jListAlunosCriticos.revalidate();
-		jListAlunosCriticos.repaint();
 	}
 	
 	public void preencheTurmasComPermissao() {

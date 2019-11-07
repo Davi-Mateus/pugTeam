@@ -136,36 +136,6 @@ public class AlunoDao {
 		
 	}
 	
-	public List<Aluno> pesquisarAlunoCriticosMes() {
-		Connection conn = new ConexaoMySql().conectar();
-		if (conn==null) {
-			return null;			
-		}
-		try {
-			PreparedStatement pst = conn.prepareStatement("select * from alunos_criticos_mes");
-			ResultSet rs = pst.executeQuery();
-			List<Aluno> alunos = new ArrayList<>();
-			while (rs.next()) {
-				Aluno aluno = new Aluno();
-				aluno.setIdAluno(rs.getInt("id_aluno"));
-				aluno.setNomeAluno(rs.getString("nome_aluno"));
-				aluno.setNumeroMatricula(rs.getLong("numero_matricula"));
-				alunos.add(aluno);	
-			}
-			return alunos;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		} finally {
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		
-	}
-	
 	public Aluno pesquisarPorNumeroMatricula(Long numeroMatricula) {
 		Connection conn = new ConexaoMySql().conectar();
 		if (conn==null) {
