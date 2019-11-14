@@ -116,7 +116,7 @@ public class JanelaMatriculaAluno {
 				MatriculaDao matriculaDao = new MatriculaDao();
 			
 				if ((alunoSelecionado.getIdAluno() == 0) && (alunoSelecionado.getNumeroMatricula()==null)) {
-					JOptionPane.showMessageDialog(null, "ERRO, o nome do aluno não foi selecionado corretamente");
+					JOptionPane.showMessageDialog(null, "ERRO, o aluno não foi selecionado corretamente");
 					return;
 				}
 				if (turma == "Selecione a turma") {
